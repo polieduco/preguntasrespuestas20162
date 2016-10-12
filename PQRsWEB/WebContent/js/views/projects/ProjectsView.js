@@ -16,7 +16,7 @@ define([
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
       this.$el.html(projectsTemplate);
 
-      var project0 = new ProjectModel({title: 'Cross Domain', url: 'https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/examples/cross-domain'}); 
+      var project0 = new ProjectModel({title:'Cross Domain', url: 'https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/examples/cross-domain'}); 
       var project1 = new ProjectModel({title:'Infinite Scroll', url: 'https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/examples/infinite-scroll'}); 
       var project2 = new ProjectModel({title:'Modular Backbone', url: 'https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/examples/modular-backbone'}); 
       var project3 = new ProjectModel({title:'Node MongoDB Mongoose Restify', url: 'https://github.com/thomasdavis/backbonetutorials/tree/gh-pages/examples/nodejs-mongodb-mongoose-restify'});
@@ -35,7 +35,7 @@ define([
 
       // add the sidebar 
       var sidebarView = new SidebarView();
-      sidebarView.render();
+      //sidebarView.render();
 
     }
   });
