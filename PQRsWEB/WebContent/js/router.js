@@ -14,6 +14,7 @@ define([
       // Define some URL routes
     	'actions': 'defaultAction',
       'projects': 'showProjects',
+      'inicioSesionn': 'showInicioSesion',
       
       // Default
       
@@ -37,6 +38,12 @@ define([
          
         var listarUsuariosView = new ListarUsuariosView();
         listarUsuariosView.render();
+        
+    });
+    app_router.on('route:showInicioSesion', function () {
+        
+        var inicioSesionView = new InicioSesionView();
+        inicioSesionView.render();
         
     });
 
