@@ -4,7 +4,6 @@ define([
   'backbone',
   'views/home/HomeView',
   'views/listarUsuarios/ListarUsuariosView',
-  'views/projects/ProjectsView',
   'views/footer/FooterView',
   'views/UsuarioYcontraseña/InicioSesionView',
   'views/UsuarioYcontraseña/OlvidoView',
@@ -15,16 +14,13 @@ define([
   'views/llistarDirectorio/EditarComentarioView',
   'views/llistarDirectorio/EditarPreguntaView',
   'views/llistarDirectorio/FiltrarPreguntasView',
-  'views/llistarDirectorio/ListarView',
-], function($, _, Backbone, HomeView, ListarUsuariosView, ProjectsView, FooterView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AñadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarView) {
+  'views/llistarDirectorio/ListarPreguntasView',
+], function($, _, Backbone, HomeView, ListarUsuariosView, FooterView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AñadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarPreguntasView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
-    	'projects': 'showProjects',
-    	'inicioSesionn': 'showInicioSesion',
-    	
-    	
+    	'listarUsuarios': 'showListarUsuarios',
         'olvido': 'showOlvido',
         'crearUsuarioYeditarUsuario': 'showCrearUsuarioYeditarUsuario',
         'añadirComentario': 'showAñadirComentario',
@@ -33,12 +29,13 @@ define([
         'editarComentario': 'showEditarComentario',
         'editarPregunta': 'showEditarPregunta',
         'filtrarPreguntas': 'showFiltrarPreguntas',
-        'listar': 'showListar',
-        
+        'listarPreguntas': 'showListarPreguntas',
+        'listarUsuarios': 'showListarUsuarios',
+        'inicioSesion': 'showInicioSesion',
         
       
       // Default
-        '*listarUsuarios': 'showListarUsuarios',
+        '*home': 'showHome',
        
        
     }
@@ -47,18 +44,19 @@ define([
   var initialize = function(){
 
     var app_router = new AppRouter;
-    
-    app_router.on('route:showProjects', function(){
-        var projectsView = new ProjectsView();
-        projectsView.render();
-    });
     app_router.on('route:showInicioSesion', function(){
     	var inicioSesionView = new InicioSesionView();
     	inicioSesionView.render();
     });
     
-    app_router.on('route:showListarUsuarios', function (actions) {
+    app_router.on('route:showHome', function (actions) {
          
+        var homeView = new HomeView();
+        homeView.render();
+        
+    });
+    app_router.on('route:showListarUsuarios', function () {
+        
         var listarUsuariosView = new ListarUsuariosView();
         listarUsuariosView.render();
         
@@ -116,11 +114,11 @@ define([
         filtrarPreguntasView.render();
 
     });
-    app_router.on('route:showListar', function(){
+    app_router.on('route:showListarPreguntas', function(){
  	   
         // Call render on the module we loaded in via the dependency array
-        var listarView = new ListarView();
-        listarView.render();
+        var listarPreguntasView = new ListarPreguntasView();
+        listarPreguntasView.render();
 
     });
     
