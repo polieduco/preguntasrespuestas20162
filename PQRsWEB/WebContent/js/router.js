@@ -5,12 +5,26 @@ define([
   'views/home/HomeView',
   'views/listarUsuarios/ListarUsuariosView',
   'views/projects/ProjectsView',
-  'views/footer/FooterView'
-], function($, _, Backbone, HomeView, ListarUsuariosView, ProjectsView, FooterView) {
+  'views/footer/FooterView',
+  'views/UsuarioYcontraseña/InicioSesionView',
+  'views/UsuarioYcontraseña/OlvidoView',
+  'views/UsuarioYcontraseña/CrearUsuarioYeditarUsuarioView',
+  'views/llistarDirectorio/AñadirComentarioView',
+  'views/llistarDirectorio/BusquedaAvanzadaView',
+  'views/llistarDirectorio/BusquedaBasicaView',
+  'views/llistarDirectorio/EditarComentarioView',
+  'views/llistarDirectorio/EditarPreguntaView',
+  'views/llistarDirectorio/FiltrarPreguntasView',
+  'views/llistarDirectorio/ListarView',
+], function($, _, Backbone, HomeView, ListarUsuariosView, ProjectsView, FooterView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AñadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
+    	'projects': 'showProjects',
+    	'inicioSesionn': 'showInicioSesion',
+    	
+    	
         'olvido': 'showOlvido',
         'crearUsuarioYeditarUsuario': 'showCrearUsuarioYeditarUsuario',
         'añadirComentario': 'showAñadirComentario',
@@ -20,8 +34,8 @@ define([
         'editarPregunta': 'showEditarPregunta',
         'filtrarPreguntas': 'showFiltrarPreguntas',
         'listar': 'showListar',
-        'projects': 'showProjects',
-        'inicioSesionn': 'showInicioSesion',
+        
+        
       
       // Default
         '*listarUsuarios': 'showListarUsuarios',

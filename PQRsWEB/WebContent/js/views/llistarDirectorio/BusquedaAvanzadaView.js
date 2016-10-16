@@ -7,7 +7,7 @@ define([
   'backbone',
   'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/busquedaAvanzadaTemplate.html'
-], function($, _, Backbone, SidebarView, usquedaAvanzadaTemplate){
+], function($, _, Backbone, SidebarView, busquedaAvanzadaTemplate){
 
   var BusquedaAvanzadaView = Backbone.View.extend({
     el: $("#page"),

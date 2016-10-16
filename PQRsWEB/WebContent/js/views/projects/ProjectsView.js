@@ -4,7 +4,7 @@ define([
   'backbone',
   'views/sidebar/SidebarView',
   'text!templates/projects/projectsTemplate.html'
-  ], function($, _, Backbone, SidebarView, inicioSesionTemplate){
+  ], function($, _, Backbone, SidebarView, projectsTemplate){
   var ProjectsView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
