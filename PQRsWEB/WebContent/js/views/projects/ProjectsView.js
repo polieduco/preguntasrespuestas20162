@@ -3,9 +3,9 @@ define([
   'underscore',
   'backbone',
   'views/sidebar/SidebarView',
-  'text!templates/inicioSesion/inicioSesionTemplate.html'
+  'text!templates/UsuarioYcontraseña/inicioSesionTemplate.html'
   ], function($, _, Backbone, SidebarView, inicioSesionTemplate){
-  var InicioSesionView = Backbone.View.extend({
+  var ProjectsView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
       $('.menu li').removeClass('active');
@@ -14,5 +14,5 @@ define([
     }
   });
 
-  return InicioSesionView;
+  return ProjectsView;
 });
