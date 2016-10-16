@@ -1,4 +1,3 @@
-// Filename: router.js
 define([
   'jquery',
   'underscore',

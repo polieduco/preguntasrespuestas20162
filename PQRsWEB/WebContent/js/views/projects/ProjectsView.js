@@ -3,14 +3,14 @@ define([
   'underscore',
   'backbone',
   'views/sidebar/SidebarView',
-  'text!templates/UsuarioYcontraseña/inicioSesionTemplate.html'
+  'text!templates/projects/projectsTemplate.html'
   ], function($, _, Backbone, SidebarView, inicioSesionTemplate){
   var ProjectsView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
       $('.menu li').removeClass('active');
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-      this.$el.html(inicioSesionTemplate);
+      this.$el.html(projectsTemplate);
     }
   });
 
