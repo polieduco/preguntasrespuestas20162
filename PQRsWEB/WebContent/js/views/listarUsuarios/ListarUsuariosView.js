@@ -36,7 +36,7 @@ define([
 
       //add the sidebar 
       var sidebarView = new SidebarView();
-     sidebarView.render();
+     //sidebarView.render();
 
     }
   });
