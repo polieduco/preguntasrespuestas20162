@@ -16,7 +16,7 @@ define([
       this.$el.html(homeTemplate);
 
       var sidebarView = new SidebarView();
-      sidebarView.render();
+      //sidebarView.render();
  
     }
 
