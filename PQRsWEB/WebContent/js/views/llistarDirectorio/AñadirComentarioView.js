@@ -5,9 +5,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/añadirComentarioTemplate.html'
-], function($, _, Backbone, SidebarView,añadirComentarioTemplate){
+], function($, _, Backbone, añadirComentarioTemplate){
 
   var AñadirComentarioView = Backbone.View.extend({
     el: $("#page"),
@@ -21,9 +20,8 @@ define([
         
         //añadirComentarioView.render(); 
 
-      //add the sidebar 
-      var sidebarView = new SidebarView();
-     //sidebarView.render();
+   
+  
 
     }
   });

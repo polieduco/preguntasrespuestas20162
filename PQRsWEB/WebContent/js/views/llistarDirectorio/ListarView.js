@@ -5,9 +5,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/listarTemplate.html'
-], function($, _, Backbone, SidebarView, listarTemplate){
+], function($, _, Backbone, listarTemplate){
 
   var ListarView = Backbone.View.extend({
     el: $("#page"),
@@ -21,9 +20,7 @@ define([
         
         //listarView.render(); 
 
-      //add the sidebar 
-      var sidebarView = new SidebarView();
-     //sidebarView.render();
+   
 
     }
   });

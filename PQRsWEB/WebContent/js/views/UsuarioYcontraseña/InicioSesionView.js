@@ -2,9 +2,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/UsuarioYcontraseña/inicioSesionTemplate.html'
-  ], function($, _, Backbone, SidebarView, inicioSesionTemplate){
+  ], function($, _, Backbone, inicioSesionTemplate){
   var InicioSesionView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
