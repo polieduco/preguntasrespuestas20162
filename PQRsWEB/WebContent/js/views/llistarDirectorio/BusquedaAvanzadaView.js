@@ -5,9 +5,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/busquedaAvanzadaTemplate.html'
-], function($, _, Backbone, SidebarView, busquedaAvanzadaTemplate){
+], function($, _, Backbone, busquedaAvanzadaTemplate){
 
   var BusquedaAvanzadaView = Backbone.View.extend({
     el: $("#page"),
@@ -21,9 +20,7 @@ define([
         
         //busquedaAvanzadaView.render(); 
 
-      //add the sidebar 
-      var sidebarView = new SidebarView();
-     //sidebarView.render();
+    
 
     }
   });

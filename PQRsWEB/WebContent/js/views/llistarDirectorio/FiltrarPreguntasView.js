@@ -5,9 +5,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/filtrarPreguntasTemplate.html'
-], function($, _, Backbone, SidebarView, filtrarPreguntasTemplate){
+], function($, _, Backbone, filtrarPreguntasTemplate){
 
   var FiltrarPreguntasView = Backbone.View.extend({
     el: $("#page"),
@@ -21,9 +20,7 @@ define([
         
         //filtrarPreguntasView.render(); 
 
-      //add the sidebar 
-      var sidebarView = new SidebarView();
-     //sidebarView.render();
+
 
     }
   });

@@ -5,9 +5,8 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'views/sidebar/SidebarView',
   'text!templates/UsuarioYcontraseña/crearUsuarioYeditarUsuarioTemplate.html'
-], function($, _, Backbone, SidebarView,crearUsuarioYeditarUsuarioTemplate){
+], function($, _, Backbone, crearUsuarioYeditarUsuarioTemplate){
 
   var CrearUsuarioYeditarUsuarioView = Backbone.View.extend({
     el: $("#page"),
@@ -17,10 +16,7 @@ define([
         this.$el.html(crearUsuarioYeditarUsuarioTemplate);
 
 
-      //add the sidebar 
-      var sidebarView = new SidebarView();
-     //sidebarView.render();
-
+  
     }
   });
 
