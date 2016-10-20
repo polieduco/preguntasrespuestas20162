@@ -5,8 +5,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'views/sidebar/SidebarView',
   'text!templates/UsuarioYcontraseña/olvidoTemplate.html'
-], function($, _, Backbone, olvidoTemplate){
+], function($, _, Backbone, SidebarView, olvidoTemplate){
 
   var OlvidoView = Backbone.View.extend({
     el: $("#page"),
@@ -20,6 +21,9 @@ define([
         
         //olvidoLiatView.render(); 
 
+      //add the sidebar 
+      var sidebarView = new SidebarView();
+     //sidebarView.render();
 
     }
   });

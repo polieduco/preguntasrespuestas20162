@@ -5,8 +5,9 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'views/sidebar/SidebarView',
   'text!templates/llistarDirectorio/editarPreguntaTemplate.html'
-], function($, _, Backbone, editarPreguntaTemplate){
+], function($, _, Backbone, SidebarView, editarPreguntaTemplate){
 
   var EditarPreguntaView = Backbone.View.extend({
     el: $("#page"),
@@ -20,7 +21,10 @@ define([
         
         //editarPreguntaView.render(); 
 
-  
+      //add the sidebar 
+      var sidebarView = new SidebarView();
+     //sidebarView.render();
+
     }
   });
 

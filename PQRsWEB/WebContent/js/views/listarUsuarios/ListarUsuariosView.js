@@ -2,11 +2,12 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'views/sidebar/SidebarView',
   'models/listarUsuario/ListarUsuarioModel',
   'collections/listarUsuarios/ListarUsuariosCollection',
   'views/listarUsuarios/ListarUsuariosListView',
   'text!templates/listarUsuarios/listarUsuariosTemplate.html'
-], function($, _, Backbone, ListarUsuarioModel, ListarUsuariosCollection, ListarUsuariosListView,listarUsuariosTemplate){
+], function($, _, Backbone, SidebarView, ListarUsuarioModel, ListarUsuariosCollection, ListarUsuariosListView,listarUsuariosTemplate){
 
   var ListarUsuariosView = Backbone.View.extend({
     el: $("#page"),
@@ -33,7 +34,10 @@ define([
         
         listarUsuariosListView.render(); 
 
-  
+      //add the sidebar 
+      var sidebarView = new SidebarView();
+     //sidebarView.render();
+
     }
   });
 

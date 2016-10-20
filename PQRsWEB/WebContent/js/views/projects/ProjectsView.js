@@ -3,16 +3,16 @@ define([
   'underscore',
   'backbone',
   'views/sidebar/SidebarView',
-  'text!templates/UsuarioYcontraseña/inicioSesionTemplate.html'
-  ], function($, _, Backbone, SidebarView, inicioSesionTemplate){
-  var InicioSesionView = Backbone.View.extend({
+  'text!templates/projects/projectsTemplate.html'
+  ], function($, _, Backbone, SidebarView, projectsTemplate){
+  var ProjectsView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
       $('.menu li').removeClass('active');
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-      this.$el.html(inicioSesionTemplate);
+      this.$el.html(projectsTemplate);
     }
   });
 
-  return InicioSesionView;
+  return ProjectsView;
 });
