@@ -9,13 +9,13 @@ public class ConexionPostgres {
     	
     	ArrayList<String> lista = new ArrayList<String>();
         String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Jary";
+            "user=postgres&password=1234Abcd";
         try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
             Statement comando = conexion.createStatement();
             String sql = 
-                "SELECT idpregunta,pregunta FROM tbpregunta"+'"';
+                "SELECT idpregunta,pregunta FROM tbpregunta";
             ResultSet resultado = comando.executeQuery(sql);
             while(resultado.next()) {
             	String i = resultado.getString("idpregunta");
@@ -39,7 +39,7 @@ public class ConexionPostgres {
     	
     	ArrayList<String> lista = new ArrayList<String>();
         String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Jary";
+            "user=postgres&password=1234Abcd";
         try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
