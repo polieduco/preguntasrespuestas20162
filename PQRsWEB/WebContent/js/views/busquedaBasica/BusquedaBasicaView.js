@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/busquedaBasicaTemplate.html'
+  'text!templates/busquedaBasica/busquedaBasicaTemplate.html'
 ], function($, _, Backbone, busquedaBasicaTemplate){
 
   var BusquedaBasicaView = Backbone.View.extend({

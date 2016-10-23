@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/filtrarPreguntasTemplate.html'
+  'text!templates/filtrarPreguntas/filtrarPreguntasTemplate.html'
 ], function($, _, Backbone, filtrarPreguntasTemplate){
 
   var FiltrarPreguntasView = Backbone.View.extend({

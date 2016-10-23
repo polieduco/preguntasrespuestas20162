@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/editarPreguntaTemplate.html'
+  'text!templates/editarPregunta/editarPreguntaTemplate.html'
 ], function($, _, Backbone, editarPreguntaTemplate){
 
   var EditarPreguntaView = Backbone.View.extend({

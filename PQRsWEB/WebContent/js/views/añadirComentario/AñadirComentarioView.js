@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/añadirComentarioTemplate.html'
+  'text!templates/añadirComentario/añadirComentarioTemplate.html'
 ], function($, _, Backbone, añadirComentarioTemplate){
 
   var AñadirComentarioView = Backbone.View.extend({

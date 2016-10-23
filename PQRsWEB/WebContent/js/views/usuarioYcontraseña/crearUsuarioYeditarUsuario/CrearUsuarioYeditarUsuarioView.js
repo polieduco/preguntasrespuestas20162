@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/UsuarioYcontraseña/crearUsuarioYeditarUsuarioTemplate.html'
+  'text!templates/usuarioYcontraseña/crearUsuarioYeditarUsuario/crearUsuarioYeditarUsuarioTemplate.html'
 ], function($, _, Backbone, crearUsuarioYeditarUsuarioTemplate){
 
   var CrearUsuarioYeditarUsuarioView = Backbone.View.extend({

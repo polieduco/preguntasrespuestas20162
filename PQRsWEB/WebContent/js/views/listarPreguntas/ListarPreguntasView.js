@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/listarTemplate.html'
+  'text!templates/listarPreguntas/listarPreguntasTemplate.html'
 ], function($, _, Backbone, listarTemplate){
 
   var ListarView = Backbone.View.extend({

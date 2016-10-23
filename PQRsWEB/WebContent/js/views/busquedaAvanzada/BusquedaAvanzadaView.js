@@ -5,7 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'text!templates/llistarDirectorio/busquedaAvanzadaTemplate.html'
+  'text!templates/busquedaAvanzada/busquedaAvanzadaTemplate.html'
 ], function($, _, Backbone, busquedaAvanzadaTemplate){
 
   var BusquedaAvanzadaView = Backbone.View.extend({
