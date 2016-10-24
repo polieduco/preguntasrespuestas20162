@@ -10,6 +10,13 @@ define([
       $('.menu li').removeClass('active');
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
       this.$el.html(inicioSesionTemplate);
+      /* Simple VanillaJS to toggle class */
+
+      document.getElementById('toggleProfile').addEventListener('click', function () {
+        [].map.call(document.querySelectorAll('.profile'), function(el) {
+          el.classList.toggle('profile--open');
+        });
+      });
     }
   });
 
