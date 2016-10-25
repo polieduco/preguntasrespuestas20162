@@ -1,27 +1,53 @@
- <div class="main">
+  <div class="main">
 <div class="mdl-cell mdl-cell--12-col">
         <div class="docs-text-styling component-title">
           <h3>Busqueda Basica</h3>
         </div>
-
-
 <div class="demo-card-square mdl-card mdl-shadow--2dp">
  
   <div class="mdl-card__supporting-text">
     <form action="#">
 	  <span class="mdl-chip mdl-chip--contact">
-            <span class="mdl-chip__text"> Buscar  pregunta </span>
+             <i class="mdl-color-text--blue-800 material-icons" role="presentation">search</i>
+             <span class="mdl-chip__text"> Buscar  pregunta </span>
       </span>
          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
              <input class="mdl-textfield__input" type="text" id="sample3">
              <label class="mdl-textfield__label" for="sample3">Palabra clave</label>
          </div>
 		 <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Buscar
+		 <i class="mdl-color-text--blue-800 material-icons" role="presentation">done_all</i>
 		 </button>
 
-
+                     <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                         <div class="mdl-snackbar__text"></div>
+                             <button class="mdl-snackbar__action" type="button"></button>
+                     </div>
+             <script>
+                 (function() {
+                 'use strict';
+                  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+                  var handler = function(event) {
+                      showSnackbarButton.style.backgroundColor = '';
+                 };
+                 showSnackbarButton.addEventListener('click', function() {
+                  'use strict';
+                 showSnackbarButton.style.backgroundColor = '#' +
+                 Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                 var data = {
+                 message: 'Resultados de la búsqueda',
+                 timeout: 2000,
+                  actionHandler: handler,
+                 actionText: 'Deshacer'
+                   };
+                  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+             });
+             }());
+              </script>
      </form>
 </div>
 </div>
 </div>
 </div>
+ 
