@@ -5,9 +5,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexion {
-	/*static final String URL = "jdbc:postgresql://localhost:5432/ManageQuestion";
-	static final String USER = "ManageQuestion";
-	static final String PASS = "practica";
+	static final String URL = "jdbc:postgresql://localhost:5432/managequestion";
+	static final String USER = "postgres";
+	static final String PASS = "yen1995";
 
 	public static Connection crearConexion() throws ClassNotFoundException, SQLException{
 		System.out.print("C...");
@@ -18,5 +18,5 @@ public class Conexion {
 	return conexion;
 	}
 	return null;
-	}*/
+	}
 }
