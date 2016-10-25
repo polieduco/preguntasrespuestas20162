@@ -1,288 +1,191 @@
-
-/* =============================================================================
-   Primary styles
-   Author: 
-   ========================================================================== */
-body {
-  background: #ebebeb;
+<
+meta charset ="utf-8"> <meta http-equiv ="X-UA-Compatible" content
+	="IE=edge"> <meta name ="description" content ="A front-end template that helps you build fast,
+	modern mobile web apps ."> <meta name ="viewport" content
+	="width=device-width, initial-scale =1.0, minimum-scale =1.0 "> <title>Material Design Lite
+	</title><!--Add to homescreen for Chrome on Android --> <meta name
+	="mobile-web-app-capable" content ="yes"> <link rel ="icon" sizes
+	="192x192" href ="images/android-desktop.png "><!--Add to homescreen for Safari on iOS -->
+	<meta name ="apple-mobile-web-app-capable" content ="yes"> <meta name
+	="apple-mobile-web-app-status-bar-style" content ="black"> <meta name
+	="apple-mobile-web-app-title" content ="Material Design Lite "> <link rel
+	="apple-touch-icon-precomposed" href ="images/ios-desktop.png "><!--Tile icon for Win8 
+	(144x144+tile color ) --> <meta name ="msapplication-TileImage" content
+	="images/touch/ms-touch-icon-144x144-precomposed.png "> <meta name
+	="msapplication-TileColor" content ="#3372DF "> <link rel ="shortcut icon
+	" href ="images/favicon.png "><!--SEO: If your mobile URL is different from the desktop URL,
+	add a canonical link to the desktop page https: //developers.google.com
+	/webmasters/smartphone-sites/feature-phones --><!-- <link rel
+	="canonical" href ="http: //www.example.com /">--> <link rel
+	="stylesheet" href ="https: //fonts.googleapis.com /css?family=Roboto:regular,
+	bold, italic, thin, light, bolditalic, black, medium &amp;lang=en"> <link rel
+	="stylesheet" href ="https: //fonts.googleapis.com
+	/icon?family=Material+Icons "> <link rel ="stylesheet" href ="https:
+	//code.getmdl.io /1.2.1 /material.cyan-light_blue.min.css "><!--Material Design Lite -->
+	<script src ="https: //code.getmdl.io /1.2.1 /material.min.js "> </script>
+	<link rel ="stylesheet" href ="https: //code.getmdl.io /1.2.1 /material.indigo-pink.min.css
+	"><!--Material Design icon font --> <link rel ="stylesheet" href
+	="https: //fonts.googleapis.com /icon?family=Material+Icons "> <link rel
+	="stylesheet" href ="styles.css "> <style>#view-source {
+	position: fixed;
+	display: block;
+	right: 0;
+	bottom: 0;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	z-index: 900;
+}
+/* Base styles */
+*, *:after, *:before {
+	box-sizing: border-box;
 }
 
-#container {
-  width: 960px;
-  margin: auto;
-  min-height: 500px;
-  background: #fff;
-}
-#menu {
-  background: #444;
-  height: 30px; color: #fff; text-align: right;
-}
-#menu ul {
-  list-style: none;
-  margin: 0; padding: 0;
-}
-#menu ul li {
-  float: left;
-  margin-left: 10px;
-}
-#menu ul li a {
-  color: #fff;
-  line-height: 30px;
-  text-decoration: none;
-}
-#menu ul li a:hover {
-  color: #ccc;
-}
-#container {
-
-}
-#logo {
-   padding: 20px;
-}
-h1{
-  padding: 0;
-  margin: 0;
-}
-#page {
-  border-top: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
-  min-height: 400px;
-  padding: 20px;
-  overflow: hidden;
+/* Container */
+.container {
+	position: absolute;
+	width: 24em;
 }
 
-#page  {
-  width: 960px;
+/* Profile Card */
+.profile {
+	position: relative;
 }
 
- #page .main {
-    display: block;
-    position:relative;
-    top: 0px;
-    left: 0px;
-    padding: 0px;
-    margin: 0px;
-    width: 500px;
-    float: left;
-    overflow: hidden;
-  }
-
- #page .sidebar {
-    display: block;
-    position:relative;
-    top: 0px;
-    left: 0px;
-    padding: 10px;
-    margin: 0px;
-    width: 400px;
-    height: 300px;
-    background-color:#FFF;
-    float: left;
-  }
-
-  #page .sidebar .ad {
-    clear:both;
-  }
-
-  #page .sidebar .ad .pic {
-    display: block;
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    top: 0px;
-    left: 0px;
-    width: 150px;
-  }  
-
-  #page .sidebar .ad .info {
-    display: block;
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    float: left;
-    top: 0px;
-    left: 0px;
-    width: 250px;
-  }  
-
-  #page .sidebar .ad .info h4 {
-    font-size: 16px;
-    color:#666;
-  }
-
-  #page .sidebar .ad .info p {
-    font-size: 10px;
-    color:#999;
-  }
-
-#page .contributors-stats ul {
-  list-style: none;
+.profile--open {
+	
 }
 
-#page .contributors-stats ul li {
-  display:block;
-  position: relative;
-  height: 20px;
+.profile--open .profile__form {
+	visibility: invisible;
+	height: auto;
+	opacity: 1;
+	transform: translateY(-6em);
+	padding-top: 12em;
 }
 
-#page .contributors-stats ul li p {
-  font-size: 20px;
-  color:#999;
-  font-weight: bold; 
-  margin: 0px;
-  padding: 0px;
+.profile--open .profile__fields {
+	opacity: 1;
+	visibility: visible;
 }
 
-#page #contributors-list {
-
+.profile--open .profile__avatar {
+	transform: translate(-50%, -1.5em);
+	border-radius: 50%;
 }
 
-#page #contributors-list .podium {
-  display: block;
-  position: relative;
-  float: left;
-  height: 100%;
-  width: 320px;
+.profile__form {
+	position: relative;
+	background: white;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+	padding: 3em;
+	border-radius: .25em;
+	-webkit-filter: drop-shadow(0 0 2em rgba(0, 0, 0, 0.2));
+	transition: opacity .4s ease-in-out, height .4s ease-in-out, transform
+		.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding .4s
+		cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#page #contributors-list .podium .top {
-  display: block;
-  position: relative;
-  float: left;
+.profile__fields {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-#page #contributors-list .podium .base {
-  display: block;
-  position: relative;
-  float: left;
-  background-color: rgba(214, 214, 214, 0.38);
-  width: 100%;
+.profile__avatar {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 1.25em;
+	overflow: hidden;
+	width: 4.5em;
+	height: 4.5em;
+	display: block;
+	transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	will-change: transform;
 }
 
-#page #contributors-list .podium .base p {
-  text-align: left;
-  color: #666;
-  font-weight: normal; 
-  font-size: 12px; 
-  margin-left: 10px;
+.profile__avatar:focus {
+	outline: 0;
 }
 
-#page #contributors-list ul.contributors {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-  }
+.profile__footer {
+	padding-top: 1em;
+}
 
-  #page #contributors-list ul.contributors li {
-    display: block;
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
-    float: left;
-  }
+/* Form */
+.field {
+	position: relative;
+	margin-bottom: 2em;
+}
 
- #page #contributors-list ul.contributors li div.contributor {
-    display: block;
-    position: relative;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
- } 
+.label {
+	position: absolute;
+	height: 2rem;
+	line-height: 2rem;
+	bottom: 0;
+	color: #999;
+	transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
 
- #page #contributors-list ul.contributors li div.contributor ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+.input {
+	width: 100%;
+	font-size: 100%;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	height: 2rem;
+	line-height: 2rem;
+	border-bottom: 1px solid #eee;
+	color: #777;
+	transition: all .2s ease-in;
+}
 
- } 
+.input:focus {
+	outline: 0;
+	border-color: #ccc;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li {
-    display: block;
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
- }
+/* Using required and a faux pattern to see if input has text from http://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css */
+.input:focus+.label, input:valid+.label {
+	transform: translateY(-100%);
+	font-size: 0.75rem;
+	color: #ccc;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li.username {
-    z-index: 2;
-    height: 14px;
-    border: none;
- }
+/* Button */
+.btn {
+	border: 0;
+	font-size: 0.75rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 1.5rem;
+	color: white;
+	background: #0000ff;
+	text-transform: uppercase;
+	border-radius: .25rem;
+	letter-spacing: .2em;
+	transition: background .2s;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li.username p {
-    display:block;
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 14px;
-    text-align: center;
-    font-size: 10px;
-    font-weight: normal;
-    color:#333;
-    line-height: 14px !important;
- }
+.btn:focus {
+	outline: 0;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li.username p a {
-    color:#333;
-    text-decoration: none;
- }
+.btn:hover, .btn:focus {
+	background: #0080ff;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li.username p a:hover {
-    color:#334231;
- }
+/* Intro animation */
+@
+keyframes intro {from { opacity:0;
+	top: 0;
+}
 
- #page #contributors-list ul.contributors li div.contributor ul li.pic {
-    z-index: 1;
- }
-
- #page #contributors-list ul.contributors li div.contributor ul li.pic a {
-    display:block;
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    border: none;
- }
-
- #page #contributors-list ul.contributors li div.contributor ul li.pic p {
-    display: block;
-    position: absolute;
-    margin: 0px;
-    padding: 0px;
-    top: 0px;
-    left: 0px;
-    width: 100%;
- }
-
- #page #contributors-list ul.contributors li div.contributor ul li.contributions {
-    z-index: 3;
-    pointer-events:none;
- }
-
- #page #contributors-list ul.contributors li div.contributor ul li.contributions p {
-    display:block;
-    position: absolute;
-    left:0px;
-    width:100%;
-    height: 15%;
-    top: 85%;
-    text-align: center;
-    line-height: 14px !important;
-    font-size: 10px;
-    font-weight: normal;
-    color:#333;
-    margin:0px;
-    padding:0px;
- }
-
+to {
+	opacity: 1;
+	top: 50%;
+}
+}

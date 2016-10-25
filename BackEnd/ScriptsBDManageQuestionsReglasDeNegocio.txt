@@ -1,0 +1,320 @@
+-- Database: ManageQuestion
+
+-- DROP DATABASE ManageQuestion;
+
+CREATE DATABASE ManageQuestion
+  WITH OWNER = postgres
+       ENCODING = 'UTF8'
+       TABLESPACE = pg_default
+       LC_COLLATE = 'Spanish_Spain.1252'
+       LC_CTYPE = 'Spanish_Spain.1252'
+       CONNECTION LIMIT = -1;
+
+----------------fin creacion bd------------------------------------------------------------------------------------------------------------------------
+
+--------TbEstado script 1------------------------------------------------------------------------------------------------------------------------------------
+
+-- Table: public.TbEstado
+
+-- DROP TABLE public.TbEstado;
+
+CREATE TABLE public.TbEstado
+(
+  IdEstado  SERIAL PRIMARY KEY,
+  NomEstado varchar(250)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbEstado
+  OWNER TO postgres;
+
+  
+
+insert into TbEstado (NomEstado)values('Activo');
+insert into TbEstado (NomEstado)values('Inactivo');
+  
+-----------------fin TbEstado---------------------------------------------------------------------------------------------------------------
+
+-------------Inicio TbRol-----------------------------------------------------------------------------------------------------------------------
+
+-- Table: public.TbRol
+
+-- DROP TABLE public.TbRol;
+
+CREATE TABLE public.TbRol
+(
+  IdRol SERIAL PRIMARY KEY,
+  NomRol varchar(250)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbRol
+  OWNER TO postgres;
+
+  
+  insert into TbRol (NomRol)values('Administrador');
+  
+  
+-------------Fin TbRol----------------------------------------------------------------------------------------------------------------------
+
+
+--------------Inicio TbUsuarios------------------------------------------------------------------------------------------------------------------------
+
+-- Table: public.TbUsuario
+
+-- DROP TABLE public.TbUsuario;
+
+CREATE TABLE public.TbUsuario
+(
+  IdUsuario SERIAL PRIMARY KEY,
+  Nombre varchar(250),
+  Identificacion integer,
+  Cargo varchar(200),
+  UserName varchar(200),
+  Password text,
+  IdRol SERIAL,
+  --CHECK (Identificacion~ '^[0-9]*.?[0-9]*$'),
+  CHECK (length( Nombre)>6),
+  CONSTRAINT forenkeyIdRol FOREIGN KEY (IdRol)
+      REFERENCES public.TbRol (IdRol) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbUsuario
+  OWNER TO postgres;
+
+-- Index: public.fki_forenkeyIdRol
+
+-- DROP INDEX public.fki_forenkeyIdRol;
+
+CREATE INDEX fki_forenkeyIdRol
+  ON public.TbUsuario
+  USING btree
+  (IdRol);
+  
+  insert into TbUsuario (Nombre,Identificacion,Cargo,UserName,Password,IdRol)values('David Jinete Clemow',102558888,'Desarrollador','jdjinete','jdjinete',1);
+
+------------------Fin TbUsuarios------------------------
+
+-----------Inicio TbAreaAprobacion-----------------------
+
+-- Table: public.TbAreaAprobacion
+
+-- DROP TABLE public.TbAreaAprobacion;
+
+CREATE TABLE public.TbAreaAprobacion
+(
+  IdAreaAprobacion  SERIAL PRIMARY KEY,
+  NomArea varchar(250),
+  IdUsuario SERIAL ,
+  CONSTRAINT TbAreaAprobacion_IdUsuario_fkey FOREIGN KEY (IdUsuario)
+      REFERENCES public.TbUsuario (IdUsuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbAreaAprobacion
+  OWNER TO postgres;
+  
+    insert into TbAreaAprobacion (NomArea,IdUsuario)values('Decanatura',1);
+
+---------------Fin TbAreaAprobacion-----------------------
+
+
+
+---------------Inicio TbPregunta------------------------------
+
+-- Table: public.TbPregunta
+
+-- DROP TABLE public.TbPregunta;
+
+CREATE TABLE public.TbPregunta
+(
+  IdPregunta SERIAL PRIMARY KEY,
+  Pregunta varchar(4000) NOT NULL,
+  FechaInicioVigencia timestamp with time zone,
+  FechaFinVigencia timestamp with time zone,
+  FechaCreacion timestamp with time zone,
+  IdUsuario SERIAL,
+  CHECK (FechaInicioVigencia>=current_timestamp and FechaCreacion>=current_timestamp and FechaFinVigencia>=FechaCreacion),
+     CHECK (length( Pregunta)>6),
+  CONSTRAINT TbPregunta_IdUsuario_fkey FOREIGN KEY (IdUsuario)
+      REFERENCES public.TbUsuario (IdUsuario) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbPregunta
+  OWNER TO postgres;
+
+      insert into TbPregunta (Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)values('¿Que precio tiene la matricula para peluqueria?',TIMESTAMP '2016-10-17',TIMESTAMP '2016-10-18',TIMESTAMP '2016-10-10',1);
+
+--------------------Fin TbPregunta---------------------
+
+
+
+--------------------Inicio TbPregunta---------------------
+
+-- Table: public.TbRespuesta
+
+-- DROP TABLE public.TbRespuesta;
+
+CREATE TABLE public.TbRespuesta
+(
+  IdRespuesta SERIAL PRIMARY KEY,
+  Respuesta text,
+  IdPregunta SERIAL ,
+   CHECK (length( Respuesta)>6),
+  CONSTRAINT ForeingKeyIdPregunta FOREIGN KEY (IdPregunta)
+      REFERENCES public.TbPregunta (IdPregunta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbRespuesta
+  OWNER TO postgres;
+
+-- Index: public.fki_ForeingKeyIdPregunta
+
+-- DROP INDEX public.fki_ForeingKeyIdPregunta;
+
+CREATE INDEX fki_ForeingKeyIdPregunta
+  ON public.TbRespuesta
+  USING btree
+  (IdPregunta);
+  
+     insert into TbRespuesta (Respuesta,IdPregunta)values('Tiene un costo de $10.000.00 este semestre por que las clase la darà un pelquero italino :P',1);
+
+------------------Fin TbRespuesta-------------------------
+
+
+--------------------Inicio TbCategoria---------------------
+
+-- Table: public.TbCategoria
+
+-- DROP TABLE public.TbCategoria;
+
+CREATE TABLE public.TbCategoria
+(
+  IdCategoria   SERIAL PRIMARY KEY,
+  NomCategoria varchar(250),
+  IdPregunta SERIAL ,
+  CONSTRAINT TbCategoria_IdPregunta_fkey FOREIGN KEY (IdPregunta)
+      REFERENCES public.TbPregunta (IdPregunta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbCategoria
+  OWNER TO postgres;
+
+--    insert into TbCategoria (NomCategoria,IdPregunta)values('Financiero',1);
+	
+	
+--------------------Fin TbCategoria---------------------
+
+
+--------------------Inicio TbPalabrasClave---------------------
+
+-- Table: public.TbPalabrasClave
+
+-- DROP TABLE public.TbPalabrasClave;
+
+CREATE TABLE public.TbPalabrasClave
+(
+  IdClave  SERIAL PRIMARY KEY,
+  PalabraClave varchar(500),
+  IdPregunta SERIAL,
+  CONSTRAINT TbPalabrasClave_IdPregunta_fkey FOREIGN KEY (IdPregunta)
+      REFERENCES public.TbPregunta (IdPregunta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbPalabrasClave
+  OWNER TO postgres;
+
+	--	insert into TbPalabrasClave (PalabraClave,IdPregunta)values('Matricula',1);
+	  --  insert into TbPalabrasClave (PalabraClave,IdPregunta)values('Costo',1);
+	--	insert into TbPalabrasClave (PalabraClave,IdPregunta)values('Peluquerìa',1);
+--------------------Fin TbPalabrasClave---------------------
+
+
+--------------------Inicio TbPreguntasXPalabrasClave---------------------
+
+-- Table: public.TbPreguntasXPalabrasClave
+
+-- DROP TABLE public.TbPreguntasXPalabrasClave;
+
+CREATE TABLE public.TbPreguntasXPalabrasClave
+(
+  IdP_PalabraClave SERIAL PRIMARY KEY,
+  IdPregunta SERIAL,
+  IdClave SERIAL,
+  CONSTRAINT TbPreguntasXPalabrasClave_IdClave_fkey FOREIGN KEY (IdClave)
+      REFERENCES public.TbPalabrasClave (IdClave) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT TbPreguntasXPalabrasClave_IdPregunta_fkey FOREIGN KEY (IdPregunta)
+      REFERENCES public.TbPregunta (IdPregunta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbPreguntasXPalabrasClave
+  OWNER TO postgres;
+
+	--    insert into TbPreguntasXPalabrasClave (IdPregunta,IdClave)values(1,1);
+
+--------------------fin TbPreguntasXPalabrasClave---------------------
+
+
+-------------------Inicio TbAprobacionPreguntas------------------------------------------
+
+
+-- Table: public.TbAprobacionPreguntas
+
+-- DROP TABLE public.TbAprobacionPreguntas;
+
+CREATE TABLE public.TbAprobacionPreguntas
+(
+  IdAprobacionPregunta  SERIAL PRIMARY KEY,
+  IdPregunta SERIAL ,
+  IdAreaAprobacion SERIAL ,
+  IdEstado SERIAL ,
+  CONSTRAINT TbAprobacionPreguntas_IdAreaAprobacion_fkey FOREIGN KEY (IdAreaAprobacion)
+      REFERENCES public.TbAreaAprobacion (IdAreaAprobacion) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION,
+  CONSTRAINT TbAprobacionPreguntas_IdPregunta_fkey FOREIGN KEY (IdPregunta)
+      REFERENCES public.TbPregunta (IdPregunta) MATCH SIMPLE
+      ON UPDATE NO ACTION ON DELETE NO ACTION
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.TbAprobacionPreguntas
+  OWNER TO postgres;
+
+-- Index: public.fki_Fk_IdEstado_TbAprobacionPreguntas
+
+-- DROP INDEX public.fki_Fk_IdEstado_TbAprobacionPreguntas;
+
+CREATE INDEX fki_Fk_IdEstado_TbAprobacionPreguntas
+  ON public.TbAprobacionPreguntas
+  USING btree
+  (IdEstado);
+
+  
+--  	    insert into TbAprobacionPreguntas (IdPregunta,IdAreaAprobacion,IdEstado)values(1,1,1);
+
+
+-------------------------Fin TbAprobacionPreguntas-----------------------------------
