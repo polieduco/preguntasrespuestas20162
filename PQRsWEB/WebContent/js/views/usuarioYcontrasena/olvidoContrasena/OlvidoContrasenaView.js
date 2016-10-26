@@ -5,6 +5,7 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'text!templates/usuarioYcontrasena/olvidoContrasena/olvidoContrasenaTemplate.html'
 ], function($, _, Backbone, olvidoTemplate){
 
   var OlvidoView = Backbone.View.extend({
