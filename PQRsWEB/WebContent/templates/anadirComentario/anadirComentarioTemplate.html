@@ -1,0 +1,90 @@
+<<<<<<< HEAD:PQRsWEB/WebContent/templates/anadirComentario/anadirComentarioTemplate.html
+ <div class="main">
+<div class="mdl-cell mdl-cell--12-col">
+        <div class="docs-text-styling component-title">
+          <h3>Añadir Comentario</h3>
+        </div>
+
+<div>
+  <div>
+    <form action="#">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+             <label class="mdl-textfield__label" for="sample3">Escribe un comentario...</label>
+		 <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Comentar
+		 </button>
+     </form>
+
+  </div>
+</div>
+</div>
+</div>
+
+=======
+ <div class="main">
+<script src="./js/mdl/material.min.js"></script>
+        <div class="docs-text-styling component-title">
+          <h3>Agregar Comentario</h3>
+        </div>
+
+<div>
+  <div>
+  <div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <form action="#">
+    <i class="mdl-color-text--blue-800 material-icons" role="presentation">person</i>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="sample3">
+             <label class="mdl-textfield__label" for="sample3">Escribe un comentario...</label>
+		  </div>
+		 <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Comentar
+		  <i class="mdl-color-text--blue-800 material-icons" role="presentation">done_all</i>
+		 </button>
+     <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                         <div class="mdl-snackbar__text"></div>
+                             <button class="mdl-snackbar__action" type="button"></button>
+                     </div>
+                <script>
+                 (function() {
+                 'use strict';
+                  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+                  var handler = function(event) {
+                      showSnackbarButton.style.backgroundColor = '';
+                 };
+                 showSnackbarButton.addEventListener('click', function() {
+                  'use strict';
+                 showSnackbarButton.style.backgroundColor = '#' +
+                 Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                 var data = {
+                 message: 'Comentario agregado',
+                 timeout: 2000,
+                  actionHandler: handler,
+                 actionText: 'Deshacer'
+                   };
+                  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+             });
+             }());
+              </script>
+     </form>
+ <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+             <i class="material-icons">mood</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+             <i class="material-icons">add_a_photo</i>
+        </button>
+		 <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+             <i class="material-icons">file_upload</i>
+        </button>
+		<button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+             <i class="material-icons">format_list_bulleted</i>
+        </button>
+        <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+             <i class="material-icons">format_list_numbered</i>
+        </button>
+          </div>
+</div>
+	    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+  </div>
+</div>
+</div>
+>>>>>>> master:PQRsWEB/WebContent/templates/añadirComentario/añadirComentarioTemplate.html

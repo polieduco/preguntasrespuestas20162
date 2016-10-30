@@ -4,17 +4,17 @@ define([
   'underscore',
   'backbone',
   'views/listarUsuarios/ListarUsuariosView',
-  'views/usuarioYcontraseña/inicioSesion/InicioSesionView',
-  'views/usuarioYcontraseña/olvidoContraseña/OlvidoContraseñaView',
-  'views/usuarioYcontraseña/crearUsuarioYeditarUsuario/CrearUsuarioYeditarUsuarioView',
-  'views/añadirComentario/AñadirComentarioView',
+  'views/usuarioYcontrasena/inicioSesion/InicioSesionView',
+  'views/usuarioYcontrasena/olvidoContrasena/OlvidoContrasenaView',
+  'views/usuarioYcontrasena/crearUsuarioYeditarUsuario/CrearUsuarioYeditarUsuarioView',
+  'views/anadirComentario/AnadirComentarioView',
   'views/busquedaAvanzada/BusquedaAvanzadaView',
   'views/busquedaBasica/BusquedaBasicaView',
   'views/editarComentario/EditarComentarioView',
   'views/editarPregunta/EditarPreguntaView',
   'views/filtrarPreguntas/FiltrarPreguntasView',
   'views/listarPreguntas/ListarPreguntasView',
-], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AñadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarView) {
+], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AnadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
@@ -22,7 +22,7 @@ define([
     	'inicioSesionn': 'showInicioSesion',
         'olvido': 'showOlvido',
         'crearUsuarioYeditarUsuario': 'showCrearUsuarioYeditarUsuario',
-        'añadirComentario': 'showAñadirComentario',
+        'anadirComentario': 'showAnadirComentario',
         'busquedaAvanzada': 'showBusquedaAvanzada',
         'busquedaBasica': 'showBusquedaBasica',
         'editarComentario': 'showEditarComentario',
@@ -63,11 +63,11 @@ define([
         crearUsuarioYeditarUsuarioView.render();
 
     });
-    app_router.on('route:showAñadirComentario', function(){
+    app_router.on('route:showAnadirComentario', function(){
  	   
         // Call render on the module we loaded in via the dependency array
-        var añadirComentarioView = new AñadirComentarioView();
-        añadirComentarioView.render();
+        var anadirComentarioView = new AnadirComentarioView();
+        anadirComentarioView.render();
 
     });
     app_router.on('route:showBusquedaAvanzada', function(){
