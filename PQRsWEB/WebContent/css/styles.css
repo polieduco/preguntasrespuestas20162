@@ -236,3 +236,11 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+.demo-card-square.mdl-card {
+  width: 600px;
+  height: 200px;
+}
+.mdl-color-text--blue-800 material-icons{
+  width: 80px;
+  height: 80px;	
+}
