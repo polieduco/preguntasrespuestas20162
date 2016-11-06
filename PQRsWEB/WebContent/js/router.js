@@ -13,14 +13,14 @@ define([
   'views/editarComentario/EditarComentarioView',
   'views/editarPregunta/EditarPreguntaView',
   'views/filtrarPreguntas/FiltrarPreguntasView',
-  'views/listarPreguntas/ListarPreguntasView',
-], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoView,CrearUsuarioYeditarUsuarioView,AnadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarView) {
+  'views/listarPreguntas/ListarPreguntasView'
+], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoContrasenaView,CrearUsuarioYeditarUsuarioView,AnadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarPreguntasView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
     	'inicioSesionn': 'showInicioSesion',
-        'olvido': 'showOlvido',
+        'olvido': 'showOlvidoContrasena',
         'crearUsuarioYeditarUsuario': 'showCrearUsuarioYeditarUsuario',
         'anadirComentario': 'showAnadirComentario',
         'busquedaAvanzada': 'showBusquedaAvanzada',
@@ -28,9 +28,9 @@ define([
         'editarComentario': 'showEditarComentario',
         'editarPregunta': 'showEditarPregunta',
         'filtrarPreguntas': 'showFiltrarPreguntas',
-        'listar': 'showListar',
+        'listar': 'showListarPreguntas',
       // Default
-        '*listarUsuarios': 'showListarUsuarios',
+        '*listarUsuarios': 'showListarUsuarios'
     }
   });
   
@@ -51,10 +51,10 @@ define([
         
     });
     
-    app_router.on('route:showOlvido', function(){
+    app_router.on('route:showOlvidoContrasena', function(){
  	      
-        var olvidoView = new OlvidoView();
-        olvidoView.render();
+        var olvidoContrasenaView = new OlvidoContrasenaView();
+        olvidoContrasenaView.render();
 
     });
     app_router.on('route:showCrearUsuarioYeditarUsuario', function(){
@@ -103,11 +103,11 @@ define([
         filtrarPreguntasView.render();
 
     });
-    app_router.on('route:showListar', function(){
+    app_router.on('route:showListarPreguntas', function(){
  	   
         // Call render on the module we loaded in via the dependency array
-        var listarView = new ListarView();
-        listarView.render();
+        var listarPreguntasView = new ListarPreguntasView();
+        listarPreguntasView.render();
 
     });
     Backbone.history.start();

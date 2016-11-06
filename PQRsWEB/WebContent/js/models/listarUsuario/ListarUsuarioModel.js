@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, ListarUsusarioModel) {
+], function( _,Backbone) {
   
   var ListarUsuarioModel = Backbone.Model.extend({});
 

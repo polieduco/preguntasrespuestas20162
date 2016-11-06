@@ -17,7 +17,6 @@ define([
 
         //var busquedaBasicaCollection = new BusquedaBasicaCollection(aBusquedaBasica);  
         //var busquedaBasicaListView = new BusquedaBasicaListView({ collection: busquedaBasicaCollection}); 
-        
         //busquedaBasicaView.render(); 
 
   
