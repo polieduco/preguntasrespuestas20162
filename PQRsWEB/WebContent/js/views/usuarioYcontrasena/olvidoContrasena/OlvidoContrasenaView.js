@@ -6,17 +6,17 @@ define([
   'underscore',
   'backbone',
   'text!templates/usuarioYcontrasena/olvidoContrasena/olvidoContrasenaTemplate.html'
-], function($, _, Backbone, olvidoTemplate){
+], function($, _, Backbone, olvidoContrasenaTemplate){
 
-  var OlvidoView = Backbone.View.extend({
+  var OlvidoContrasenaView = Backbone.View.extend({
     el: $("#page"),
     render: function(){
     	$('.menu li').removeClass('active');
         $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-        this.$el.html(olvidoTemplate);
+        this.$el.html(olvidoContrasenaTemplate);
     }
   });
 
-  return OlvidoView;
+  return OlvidoContrasenaView;
 });
 
