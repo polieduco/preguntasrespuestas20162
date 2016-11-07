@@ -13,13 +13,14 @@ define([
   'views/editarComentario/EditarComentarioView',
   'views/editarPregunta/EditarPreguntaView',
   'views/filtrarPreguntas/FiltrarPreguntasView',
-  'views/listarPreguntas/ListarPreguntasView'
-], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoContrasenaView,CrearUsuarioYeditarUsuarioView,AnadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarPreguntasView) {
+  'views/listarPreguntas/ListarPreguntasView',
+  'views/vistaPrincipal/VistaPrincipalView'
+], function($, _, Backbone, ListarUsuariosView, InicioSesionView,OlvidoContrasenaView,CrearUsuarioYeditarUsuarioView,AnadirComentarioView,BusquedaAvanzadaView,BusquedaBasicaView,EditarComentarioView,EditarPreguntaView,FiltrarPreguntasView,ListarPreguntasView,VistaPrincipalView) {
   
   var AppRouter = Backbone.Router.extend({
     routes: {
       // Define some URL routes
-    	'inicioSesionn': 'showInicioSesion',
+    	
         'olvido': 'showOlvidoContrasena',
         'crearUsuarioYeditarUsuario': 'showCrearUsuarioYeditarUsuario',
         'anadirComentario': 'showAnadirComentario',
@@ -29,8 +30,12 @@ define([
         'editarPregunta': 'showEditarPregunta',
         'filtrarPreguntas': 'showFiltrarPreguntas',
         'listar': 'showListarPreguntas',
+        'listarUsuarios': 'showListarUsuarios',
+        'vistaPrincipal':'showVistaPrincipal',
       // Default
-        '*listarUsuarios': 'showListarUsuarios'
+        '*inicioSesionn': 'showInicioSesion'
+        
+        
     }
   });
   
@@ -38,13 +43,18 @@ define([
 
     var app_router = new AppRouter;
     
-
-    app_router.on('route:showInicioSesion', function(){
+    app_router.on('route:showVistaPrincipal', function () {
+        
+        var vistaPrincipalView = new VistaPrincipalView();
+        vistaPrincipalView.render();
+        
+    });
+    app_router.on('route:showInicioSesion', function(actions){
     	var inicioSesionView = new InicioSesionView();
     	inicioSesionView.render();
     });
     
-    app_router.on('route:showListarUsuarios', function (actions) {
+    app_router.on('route:showListarUsuarios', function () {
          
         var listarUsuariosView = new ListarUsuariosView();
         listarUsuariosView.render();
