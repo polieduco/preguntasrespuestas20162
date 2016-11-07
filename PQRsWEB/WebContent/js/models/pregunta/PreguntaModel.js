@@ -4,9 +4,9 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, PreguntaModel) {
+], function(_,Backbone) {
   
-  var OwnerModel = Backbone.Model.extend({});
+  var PreguntaModel = Backbone.Model.extend({});
 
   return PreguntaModel;
 

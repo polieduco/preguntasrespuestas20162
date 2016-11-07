@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, PalabrasClaveModel) {
+], function(_,Backbone) {
   
   var PalabrasClaveModel = Backbone.Model.extend({});
 

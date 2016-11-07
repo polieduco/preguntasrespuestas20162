@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, RolModel) {
+], function(_,Backbone) {
   
   var RolModel = Backbone.Model.extend({});
 

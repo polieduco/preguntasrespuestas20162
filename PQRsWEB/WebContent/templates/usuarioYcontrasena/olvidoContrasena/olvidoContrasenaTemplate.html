@@ -1,25 +1,24 @@
 <div class="main">
-    
- 
- <div class="mdl-cell mdl-cell--12-col">
-        <div class="docs-text-styling component-title">
-          <h3>Olvido cotraseÃ±a</h3>
-        </div>
 
-    <!--Google Font - Work Sans-->
-
-<div class="container">
-
-        <div class="field">
-          <input type="text" id="fieldUser" class="input" required pattern=.*\S.* />
-          <label for="fieldUser" class="label">Correo</label>
-        </div>
-        <div class="profile__footer">
-          <button class="btn">Enviar</button>
+	<link rel="stylesheet" href="../../../css/olvidoContraseña.css">
+	<div class="containerLogin">
+		<div align="center">
+			<h1>Recupera tu Contraseña</h1>
+			<IMG src="../../../imgs/logoPoli3.png">
 		</div>
-		
-  </div>
-
+		<!-- <form class="form">
+			<div>
+				<input type="email" placeholder="correo" required/>
+			</div>
+			<button type="submit" id="BtnRecuperarContraseña">Enviar</button>
+		</form> -->
+		<div class="form">
+			<div>
+				<input type="email" placeholder="correo" required id="emailPws"/>
+			</div>
+			<button type="submit" id="BtnRecuperarContraseña" onclick="GetPass(); return false;">Enviar</button>
+		</div>
+	</div>
+	
+	<script src="../../../js/olvidoContraseña.js"></script>
 </div>
-</div>
-

@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, AprobacionPreguntasModel) {
+], function(_,Backbone) {
   
   var AprobacionPreguntasModel = Backbone.Model.extend({});
 

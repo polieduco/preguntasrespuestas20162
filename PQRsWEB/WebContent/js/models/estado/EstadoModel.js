@@ -5,7 +5,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, EstadoModel) {
+], function(_,Backbone) {
   
   var EstadoModel = Backbone.Model.extend({});
 

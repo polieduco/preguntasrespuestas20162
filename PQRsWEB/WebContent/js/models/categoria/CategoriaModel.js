@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, CategoriaModel) {
+], function(_,Backbone) {
   
   var CategoriaModel = Backbone.Model.extend({});
 
