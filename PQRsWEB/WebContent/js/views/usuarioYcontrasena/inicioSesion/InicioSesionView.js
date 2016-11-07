@@ -5,7 +5,7 @@ define([
   'text!templates/usuarioYcontrasena/inicioSesion/inicioSesionTemplate.html'
   ], function($, _, Backbone, inicioSesionTemplate){
   var InicioSesionView = Backbone.View.extend({
-    el: $("#page"),
+    el: $("#mdl-layout__container"),
     render: function(){
       $('.menu li').removeClass('active');
       $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
