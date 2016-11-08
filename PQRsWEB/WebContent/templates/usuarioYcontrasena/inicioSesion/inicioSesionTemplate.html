@@ -1,6 +1,7 @@
 
+
+<link rel="stylesheet" href="css/style.css">
 <div class="main">
-	<link rel="stylesheet" href="css/style.css">
 	<div class="container">
 		<div class="profile">
 			<h2>Inicio de Sesi&#243n</h2>
@@ -23,15 +24,23 @@
 							pattern=.*\S.* /> <label for="fieldPassword" class="label">Contrase&ntildea</label>
 					</div>
 					<div>
-						<a href="index.html#/olvido" class="link"> Olvido su
+						<a href="index.html?#/olvido" class="link"> Olvido su
 							contrase&ntildea?</a>
 					</div>
 					<div>
-						<a href="index.html#/vistaPrincipal" class="link"> ir a Vista Principal</a>
+						<a href="index.html?#/vistaPrincipal" class="link"> ir a Vista Principal</a>
 					</div>
 					<div class="profile__footer">
-					
-						<button href="index.html#/vistaPrincipal" class="btn">Ingresar</button>
+					<form method="get" action="index.html?#/vistaPrincipal">
+						<?php // Empieza el código php
+
+							if ($fieldUser=='Melissa') { 
+							}else {
+							echo("usuario invalido");
+							}
+						?>
+						<button class="btn">Ingresar</button>
+						</form>
 					</div>
 				</div>
 			</div>
