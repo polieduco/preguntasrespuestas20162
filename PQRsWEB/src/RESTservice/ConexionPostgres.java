@@ -21,7 +21,7 @@ public class ConexionPostgres {
             	String i = resultado.getString("idpregunta");
                 String n = resultado.getString("pregunta");
 //                String a = resultado.getString('"'+"IdPregunta"+'"');
-                lista.add(i+" ; "+ n.replace('Â', ' ')) ;  
+                lista.add(i+" - "+ n.replace('Â', ' ')) ;  
             }
             resultado.close();
             comando.close();
@@ -63,4 +63,38 @@ public class ConexionPostgres {
         String result =lista.toString().replace(",", "\n-").replace("[", "").replace("]", "");        
 		return result;
     }
+ 
+ 
+ 
+ public String listarUsuarios() {
+ 	
+ 	ArrayList<String> lista = new ArrayList<String>();
+     String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
+         "user=postgres&password=1234Abcd";
+     try {
+         Class.forName("org.postgresql.Driver");
+         Connection conexion = DriverManager.getConnection(cc);
+         Statement comando = conexion.createStatement();
+         String sql = 
+             "select nombre,identificacion,username from tbusuario";
+         ResultSet resultado = comando.executeQuery(sql);
+         while(resultado.next()) {
+         	String i = resultado.getString("nombre");
+            String n = resultado.getString("identificacion");
+            String u = resultado.getString("username");
+//             String a = resultado.getString('"'+"IdPregunta"+'"');
+             lista.add(i+" - "+ n+" - "+ u) ;  
+         }
+         resultado.close();
+         comando.close();
+         conexion.close();
+     } catch(Exception e) {
+         System.out.println(e.getMessage());
+         System.out.println("Error");
+     }
+     
+     String result = "- "+lista.toString().replace(",", "\n-").replace("[", "").replace("]", "");        
+		return result;
+ }
+ 
 }

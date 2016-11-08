@@ -45,7 +45,14 @@ public class PreguntasRespuestas extends Application {
 	@Produces("application/json")
 	public String filtrarClientes(@QueryParam("value") int value) {
 		return sql.filtrar(value);
-	}	
+	}
+	
+	@GET
+	@Path("listarUsuarios")
+	@Produces("application/json")
+	public String listarUsuarios() {
+		return sql.listarUsuarios();
+	}
 	
 	
 }
