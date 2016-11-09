@@ -1,47 +1,190 @@
-<meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
-
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
-
-    <link rel="shortcut icon" href="images/favicon.png">
-
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
-    <!--
-    <link rel="canonical" href="http://www.example.com/">
-    -->
-
+<
+meta charset ="utf-8"> 
+<meta http-equiv ="X-UA-Compatible" content="IE=edge">
+<meta name ="description" content ="A front-end template that helps you build fast,modern mobile web apps ."> 
+<meta name ="viewport" content="width=device-width, initial-scale =1.0, minimum-scale =1.0 "> 
+<title>Politécnico Grancolombiano</title>
+<!--Add to homescreen for Chrome on Android -->
+ <meta name="mobile-web-app-capable" content ="yes">
+  <link rel="icon" size="157x160" href="Iconos1/iconoPoli.png">
+  <!--Add to homescreen for Safari on iOS -->
+	<meta name ="apple-mobile-web-app-capable" content ="yes"> 
+	<meta name="apple-mobile-web-app-status-bar-style" content ="black"> 
+	<meta name="apple-mobile-web-app-title" content ="Politécnico Grancolombiano"> 
+	<link rel="apple-touch-icon-precomposed" href =""Iconos1/ios-poli.png">
+	<!--Tile icon for Win8 (144x144+tile color ) --> 
+	<meta name ="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png ">
+	 <meta name="msapplication-TileColor" content ="#3372DF "> 
+	<link rel="shortcut icon" href="Iconos1/shortIcon.png">
+	<!--SEO: If your mobile URL is different from the desktop URL,
+	add a canonical link to the desktop page https: //developers.google.com
+	/webmasters/smartphone-sites/feature-phones -->
+	<!-- <link rel="canonical" href ="http: //www.example.com /">--> 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.cyan-light_blue.min.css">
-        <!-- Material Design Lite -->
-    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.indigo-pink.min.css">
-    <!-- Material Design icon font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles.css">
-    <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    
+<style>
+#view-source {
+	position: fixed;
+	display: block;
+	right: 0;
+	bottom: 0;
+	margin-right: 40px;
+	margin-bottom: 40px;
+	z-index: 900;
+}
+/* Base styles */
+*, *:after, *:before {
+	box-sizing: border-box;
+}
+
+/* Container */
+.container {
+	position: absolute;
+	width: 24em;
+}
+
+/* Profile Card */
+.profile {
+	position: relative;
+}
+
+.profile--open {
+	
+}
+
+.profile--open .profile__form {
+	visibility: invisible;
+	height: auto;
+	opacity: 1;
+	transform: translateY(-6em);
+	padding-top: 12em;
+}
+
+.profile--open .profile__fields {
+	opacity: 1;
+	visibility: visible;
+}
+
+.profile--open .profile__avatar {
+	transform: translate(-50%, -1.5em);
+	border-radius: 50%;
+}
+
+.profile__form {
+	position: relative;
+	background: white;
+	visibility: hidden;
+	opacity: 0;
+	height: 0;
+	padding: 3em;
+	border-radius: .25em;
+	-webkit-filter: drop-shadow(0 0 2em rgba(0, 0, 0, 0.2));
+	transition: opacity .4s ease-in-out, height .4s ease-in-out, transform
+		.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), padding .4s
+		cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile__fields {
+	opacity: 0;
+	visibility: hidden;
+	transition: opacity .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.profile__avatar {
+	position: absolute;
+	z-index: 1;
+	left: 50%;
+	transform: translateX(-50%);
+	border-radius: 1.25em;
+	overflow: hidden;
+	width: 4.5em;
+	height: 4.5em;
+	display: block;
+	transition: transform .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+	will-change: transform;
+}
+
+.profile__avatar:focus {
+	outline: 0;
+}
+
+.profile__footer {
+	padding-top: 1em;
+}
+
+/* Form */
+.field {
+	position: relative;
+	margin-bottom: 2em;
+}
+
+.label {
+	position: absolute;
+	height: 2rem;
+	line-height: 2rem;
+	bottom: 0;
+	color: #999;
+	transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.input {
+	width: 100%;
+	font-size: 100%;
+	border: 0;
+	padding: 0;
+	background-color: transparent;
+	height: 2rem;
+	line-height: 2rem;
+	border-bottom: 1px solid #eee;
+	color: #777;
+	transition: all .2s ease-in;
+}
+
+.input:focus {
+	outline: 0;
+	border-color: #ccc;
+}
+
+/* Using required and a faux pattern to see if input has text from http://stackoverflow.com/questions/16952526/detect-if-an-input-has-text-in-it-using-css */
+.input:focus+.label, input:valid+.label {
+	transform: translateY(-100%);
+	font-size: 0.75rem;
+	color: #ccc;
+}
+
+/* Button */
+.btn {
+	border: 0;
+	font-size: 0.75rem;
+	height: 2.5rem;
+	line-height: 2.5rem;
+	padding: 0 1.5rem;
+	color: white;
+	background: #0000ff;
+	text-transform: uppercase;
+	border-radius: .25rem;
+	letter-spacing: .2em;
+	transition: background .2s;
+}
+
+.btn:focus {
+	outline: 0;
+}
+
+.btn:hover, .btn:focus {
+	background: #0080ff;
+}
+
+/* Intro animation */
+@
+keyframes intro {from { opacity:0;
+	top: 0;
+}
+
+to {
+	opacity: 1;
+	top: 50%;
+}
+}
