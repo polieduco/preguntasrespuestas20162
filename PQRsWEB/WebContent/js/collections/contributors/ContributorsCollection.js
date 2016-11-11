@@ -16,7 +16,7 @@ define([
       
       //url : function() {
         //return 'https://api.github.com/repos/thomasdavis/backbonetutorials/contributors';
-      },
+     
     
       parse : function(data) {
           var uniqueArray = this.removeDuplicates(data.data);
