@@ -3,9 +3,6 @@ package edu.poli.pra.pyr.rest.service;
 import java.io.Serializable;
 
 import javax.persistence.*;
-import javax.ws.rs.ApplicationPath;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
 
 import java.util.List;
 
