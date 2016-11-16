@@ -1,30 +1,28 @@
 
-
-// Model for Tbusuario entity
-   /**
+    
+// Model for Tbpreguntasxpalabrasclave entity
+/**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, usuarioModel) {
+], function($, _,Backbone, preguntasxpalabrasclaveModel) {
   
-  var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
-        idAttribute: 'idusuario',
+  var preguntasxpalabrasclaveModel = Backbone.Model.extend({
+
+        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.preguntasxpalabrasclave/",
+        idAttribute: 'idpreguntasxpalabrasclave',
         defaults: {
-            password: "",
-            identificacion: "",
-            cargo: "",
-            nombre: "",
-            username: ""
+            idestado: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idusuario');
+            result.displayName = this.get('idpreguntasxpalabrasclave');
             return result;
         },
-      
+
+
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -39,13 +37,12 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/';
+                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.preguntasxpalabrasclave/';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-    }); 
-       return usuarioModel; 
-      
-});
-    
+ });
+
+  return preguntasxpalabrasclave; 
+});                               //se añade

@@ -1,27 +1,17 @@
-
-    
-// Model for Tbrespuesta entity
+// Collection class for Tbusuario entities
 /**
  * 
  */
-define([
+define([ 
+  'jquery', 
   'underscore',
-  'backbone'
-], function($, _,Backbone, respuestaModel) {
-  
-  var respuestaModel = Backbone.Model.extend({   
+  'backbone',
+  'models/usuario/Usuario'
+], function($, _,Backbone, usuarioModel){              //se añade
 
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/",
-        idAttribute: 'idrespuesta',
-        defaults: {
-            respuesta: ""
-        },
-        toViewJson: function () {
-            var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idrespuesta');
-            return result;
-        },
-    
+var usuarioCollection = Backbone.Collection.extend({
+ model: usuarioModel,  
+        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -35,13 +25,11 @@ define([
                     alert('Unable to fulfil the request');
                 }}
             
-            if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/';
-            }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-  return respuestaModel; 
-});                               //se añade   
-        
     });
+    
+    
+return usuarioCollection;  
+});
