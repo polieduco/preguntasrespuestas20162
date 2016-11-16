@@ -1,7 +1,12 @@
 package edu.poli.pra.pyr.rest.service;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
+import javax.ws.rs.ApplicationPath;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+
 import java.util.List;
 
 
@@ -86,7 +91,7 @@ public class Tbusuario implements Serializable {
 	public String getUsername() {
 		return this.username;
 	}
-
+	
 	public void setUsername(String username) {
 		this.username = username;
 	}
