@@ -14,4 +14,14 @@ define([
   return { 
     initialize: initialize
   };
+}, function() {
+   // Da una ubicación global para colocar los ajustes de configuración y el módulo
+  // Creaciòn.
+  var app = {
+    // Ruta raíz para ejecutar la aplicación.
+    root: "/"
+  };
+ 
+
+
 });
