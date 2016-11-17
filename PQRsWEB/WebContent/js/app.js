@@ -1,4 +1,5 @@
 // Filename: app.js
+//un archivo app.js puede contener las referencias de lógica o módulo necesarios para iniciar una aplicación.
 define([
   'jquery', 
   'underscore', 
