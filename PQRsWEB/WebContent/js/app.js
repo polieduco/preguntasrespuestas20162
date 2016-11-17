@@ -21,7 +21,7 @@ define([
     // Ruta raíz para ejecutar la aplicación.
     root: "/"
   };
- 
-
+ //  Crea un nuevo objeto Template de JavaScript.
+  var JST = window.JST = window.JST || {};
 
 });
