@@ -49,5 +49,39 @@ define([
       });
     }
   });
+  
+  // Mezcla de Backbone.Events, módulos y gestión de diseño en el objeto de aplicación
+  return _.extend(app, {
+    //Crea un objeto personalizado con un objeto Vistas anidado.
+    module: function(additionalProps) {
+      return _.extend({ Views: {} }, additionalProps);
+    },
+
+    //Ayudante para el uso de diseños
+    useLayout: function(name, options) {
+      // Habilita la variable arity  permitiendo que el primer argumento sea las opciones
+      // object and omitting the name argument.
+      if (_.isObject(name)) {
+        options = name;
+      }
+
+      //  las opciones deben ser un objeto.
+      options = options || {};
+
+      // Si se especificó una propiedad de nombre, utilícela como plantilla.
+
+      if (_.isString(name)) {
+        options.template = name;
+      }
+
+      // Crea un nuevo Layout con opciones.
+      var layout = new Backbone.Layout(_.extend({
+        el: "#main"
+      }, options));
+
+      // Cache the reference.
+      return this.layout = layout;
+    }
+  }, Backbone.Events);
 
 });
