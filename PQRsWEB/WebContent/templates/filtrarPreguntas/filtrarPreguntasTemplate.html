@@ -1,0 +1,97 @@
+ <div class="main">
+    
+ 
+ <div class="mdl-cell mdl-cell--12-col">
+        <div class="docs-text-styling component-title">
+          <h3>Filtrar  pregunta </h3>
+        </div>
+<div class="demo-card-square mdl-card mdl-shadow--2dp">
+  <div class="mdl-card__supporting-text">
+    <form action="#">
+	  <span class="mdl-chip mdl-chip--contact">
+             <i class="mdl-color-text--blue-800 material-icons" role="presentation">search</i>
+             <span class="mdl-chip__text"> Filtrar  pregunta </span>
+      </span>
+         <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+             <input class="mdl-textfield__input" type="text" id="sample3">
+             <label class="mdl-textfield__label" for="sample3">Digite su consulta</label>
+         </div>
+		 <button id="demo-show-snackbar" class="mdl-button mdl-js-button mdl-button--raised" type="button">Buscar
+		 <i class="mdl-color-text--blue-800 material-icons" role="presentation">done_all</i>
+		 </button>
+
+                     <div id="demo-snackbar-example" class="mdl-js-snackbar mdl-snackbar">
+                         <div class="mdl-snackbar__text"></div>
+                             <button class="mdl-snackbar__action" type="button"></button>
+                     </div>
+             <script>
+                 (function() {
+                 'use strict';
+                  var snackbarContainer = document.querySelector('#demo-snackbar-example');
+                  var showSnackbarButton = document.querySelector('#demo-show-snackbar');
+                  var handler = function(event) {
+                      showSnackbarButton.style.backgroundColor = '';
+                 };
+                 showSnackbarButton.addEventListener('click', function() {
+                  'use strict';
+                 showSnackbarButton.style.backgroundColor = '#' +
+                 Math.floor(Math.random() * 0xFFFFFF).toString(16);
+                 var data = {
+                 message: 'Resultados de la búsqueda',
+                 timeout: 2000,
+                  actionHandler: handler,
+                 actionText: 'Deshacer'
+                   };
+                  snackbarContainer.MaterialSnackbar.showSnackbar(data);
+             });
+             }());
+              </script>
+     </form>
+        <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+              <span class="mdl-chip__text">Estado</span>
+              <button id="demo-menu-top-left1"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+         </span>
+         <ul class="mdl-menu mdl-menu--top-left mdl-js-menu mdl-js-ripple-effect"
+    data-mdl-for="demo-menu-top-left1">
+                  <li class="mdl-menu__item">En proceso de revision</li>
+                   <li class="mdl-menu__item">Aprobado</li>
+				   <li class="mdl-menu__item">Con restricciones</li>
+                   <li class="mdl-menu__item">Rechazado</li>
+         </ul>
+		 <span class="mdl-chip mdl-chip--contact mdl-chip--deletable">
+              <span class="mdl-chip__text">Categoria</span>
+              <button id="demo-menu-top-left"
+        class="mdl-button mdl-js-button mdl-button--icon">
+  <i class="material-icons">more_vert</i>
+</button>
+         </span>
+       <ul class="mdl-menu mdl-menu--top-right mdl-js-menu mdl-js-ripple-effect"
+    data-mdl-for="demo-menu-top-left">
+                  <li class="mdl-menu__item">Academica</li>
+                   <li class="mdl-menu__item">Financiera</li>
+				   <li class="mdl-menu__item">Administrativa</li>
+         </ul>
+		 <span class="mdl-chip mdl-chip--deletable">
+              <span class="mdl-chip__text">Fecha de creacion</span>
+			  <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-chip__action">
+                 <i class="material-icons">date_range</i>
+              </button>
+         </span>
+		 <span class="mdl-chip mdl-chip--deletable">
+              <span class="mdl-chip__text">Ver todo</span>
+			  <button class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored mdl-chip__action">
+                 <i class="material-icons">check_circle</i>
+              </button>
+         </span>
+		
+
+  </div>
+</div>
+     
+	    <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+</div>
+</div>  
+
