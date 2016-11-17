@@ -23,5 +23,31 @@ define([
   };
  //  Crea un nuevo objeto Template de JavaScript.
   var JST = window.JST = window.JST || {};
+  
+  // Configurar LayoutManager con los valores predeterminados de Backbone.
+  Backbone.LayoutManager.configure({
+    // Permite que LayoutManager aumente Backbone.View.prototype.
+    manage: true,
+
+    prefix: "app/templates/",
+
+    fetch: function(path) {
+      // Concatena la extensión del archivo.
+      path = path + ".html";
+
+      // Si se almacena en caché, utilice la plantilla compilada.
+      if (JST[path]) {
+        return JST[path];
+      }
+
+      // Permite cambiar la búsqueda a `async-mode`.
+      var done = this.async();
+
+      //Busca la plantilla asincrónicamente.
+      $.get(app.root + path, function(contents) {
+        done(JST[path] = _.template(contents));
+      });
+    }
+  });
 
 });
