@@ -1,30 +1,18 @@
-
-
-// Model for Tbusuario entity
-   /**
+  
+    // Collection class for categoria entities
+/**
  * 
  */
 define([
+  'jquery', 
   'underscore',
-  'backbone'
-], function($, _,Backbone, usuarioModel) {
-  
-  var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
-        idAttribute: 'idusuario',
-        defaults: {
-            password: "",
-            identificacion: "",
-            cargo: "",
-            nombre: "",
-            username: ""
-        },
-        toViewJson: function () {
-            var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idusuario');
-            return result;
-        },
-      
+  'backbone',
+  'models/categoria/Categoria'
+], function($, _,Backbone, categoriaModel){              //se añade
+
+var categoriaCollection = Backbone.Collection.extend({
+        model: categoriaModel,  
+        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.categoria/",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -38,14 +26,10 @@ define([
                     alert('Unable to fulfil the request');
                 }}
             
-            if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/';
-            }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-    }); 
-       return usuarioModel; 
-      
-});
+    });
     
+return categoriaCollection;  
+});   

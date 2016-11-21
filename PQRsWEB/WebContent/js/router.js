@@ -1,4 +1,5 @@
 // Filename: router.js
+//Location of the routes of each view
 define([
   'jquery',
   'underscore',
