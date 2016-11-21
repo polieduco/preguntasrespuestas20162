@@ -1,5 +1,5 @@
 /**
- * 
+ * vista preliminar de los templates 
  */
 define([
   'jquery',
