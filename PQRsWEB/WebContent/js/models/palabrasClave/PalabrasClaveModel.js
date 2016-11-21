@@ -1,30 +1,24 @@
-
-
-// Model for Tbusuario entity
+// Model for Tbpalabrasclave entity
    /**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, usuarioModel) {
+], function($, _,Backbone, palabrasclaveModel) {
   
-  var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
-        idAttribute: 'idusuario',
+  var palabrasclaveModel = Backbone.Model.extend({
+        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/",
+        idAttribute: 'idclave',
         defaults: {
-            password: "",
-            identificacion: "",
-            cargo: "",
-            nombre: "",
-            username: ""
+            palabraclave: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idusuario');
+            result.displayName = this.get('idclave');
             return result;
         },
-      
+       
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -39,13 +33,12 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/';
+                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-    }); 
-       return usuarioModel; 
-      
-});
-    
+        
+   return palabrasclaveModel; 
+       });                               //se añade       
+  });

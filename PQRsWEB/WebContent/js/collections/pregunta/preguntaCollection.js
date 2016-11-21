@@ -1,30 +1,19 @@
-
-
-// Model for Tbusuario entity
-   /**
+// Collection class for Tbpregunta entities
+/**
  * 
  */
 define([
+  'jquery',     
   'underscore',
-  'backbone'
-], function($, _,Backbone, usuarioModel) {
+  'backbone',
+  'models/pregunta/Pregunta'
+], function($, _,Backbone, preguntaModel){              //se añade
+
+var preguntaCollection = Backbone.Collection.extend({
+ model: preguntaModel,
   
-  var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
-        idAttribute: 'idusuario',
-        defaults: {
-            password: "",
-            identificacion: "",
-            cargo: "",
-            nombre: "",
-            username: ""
-        },
-        toViewJson: function () {
-            var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idusuario');
-            return result;
-        },
-      
+
+        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.pregunta/",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -38,14 +27,9 @@ define([
                     alert('Unable to fulfil the request');
                 }}
             
-            if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/';
-            }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-    }); 
-       return usuarioModel; 
-      
-});
-    
+    });
+return preguntaCollection;  
+})
