@@ -1,13 +1,13 @@
 -- Database: ManageQuestion
 
--- DROP DATABASE ManageQuestion;
+ DROP DATABASE ManageQuestion;
 
 CREATE DATABASE ManageQuestion
   WITH OWNER = postgres
-       ENCODING = 'UTF8'
+--       ENCODING = 'UTF8'
        TABLESPACE = pg_default
-       LC_COLLATE = 'Spanish_Spain.1252'
-       LC_CTYPE = 'Spanish_Spain.1252'
+--       LC_COLLATE = 'Spanish_Spain.1252'
+--       LC_CTYPE = 'Spanish_Spain.1252'
        CONNECTION LIMIT = -1;
 
 ----------------fin creacion bd------------------------------------------------------------------------------------------------------------------------
@@ -153,7 +153,7 @@ WITH (
 ALTER TABLE public.TbPregunta
   OWNER TO postgres;
 
-      insert into TbPregunta (Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)values('¿Que precio tiene la matricula para peluqueria?',TIMESTAMP '2016-10-17',TIMESTAMP '2016-10-18',TIMESTAMP '2016-10-10',1);
+      insert into TbPregunta (Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)values('Que precio tiene la matricula para peluqueria',TIMESTAMP '2016-10-17',TIMESTAMP '2016-10-18',TIMESTAMP '2016-10-10',1);
 
 --------------------Fin TbPregunta---------------------
 
@@ -190,7 +190,7 @@ CREATE INDEX fki_ForeingKeyIdPregunta
   USING btree
   (IdPregunta);
   
-     insert into TbRespuesta (Respuesta,IdPregunta)values('Tiene un costo de $10.000.00 este semestre por que las clase la darà un pelquero italino :P',1);
+     insert into TbRespuesta (Respuesta,IdPregunta)values('Tiene un costo de 10.000.00 este semestre por que las clase la darà un pelquero italino :P',1);
 
 ------------------Fin TbRespuesta-------------------------
 
