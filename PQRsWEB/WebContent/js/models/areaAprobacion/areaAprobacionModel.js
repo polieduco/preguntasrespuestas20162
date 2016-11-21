@@ -1,30 +1,25 @@
-
-
-// Model for Tbusuario entity
-   /**
+// Model for areaAprobacion entity
+/**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, usuarioModel) {
+], function($, _,Backbone, areaAprobacionModel) {
   
-  var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
-        idAttribute: 'idusuario',
+  var areaAprobacionModel = Backbone.Model.extend({
+
+        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.areaAprobacion/",
+        idAttribute: 'idareaAprobacion',
         defaults: {
-            password: "",
-            identificacion: "",
-            cargo: "",
-            nombre: "",
-            username: ""
+            nomarea: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idusuario');
+            result.displayName = this.get('idareaAprobacion');
             return result;
         },
-      
+        
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -36,16 +31,15 @@ define([
                     // Otherwise the JS client has to be copied into the
                     // some (f.e. the same) Web project on the same domain
                     alert('Unable to fulfil the request');
-                }}
+                }};
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/';
+                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.areaAprobacion/';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-    }); 
-       return usuarioModel; 
-      
-});
-    
+  });
+   return areaAprobacionModel;                               //se añade  
+        
+    });
