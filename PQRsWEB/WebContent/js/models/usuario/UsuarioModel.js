@@ -7,10 +7,10 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, usuarioModel) {
+], function( _,Backbone) {
   
   var usuarioModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.usuario/",
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbusuario",
         idAttribute: 'idusuario',
         defaults: {
             password: "",
@@ -45,7 +45,7 @@ define([
             return result;
         }
     }); 
-       return usuarioModel; 
+    return usuarioModel; 
       
 });
     

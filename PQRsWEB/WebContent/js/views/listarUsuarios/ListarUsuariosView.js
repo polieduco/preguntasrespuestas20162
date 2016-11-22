@@ -3,10 +3,10 @@ define([
   'underscore',
   'backbone',
   'models/listarUsuario/ListarUsuarioModel',
-  'collections/listarUsuarios/ListarUsuariosCollection',
+ // 'collections/listarUsuarios/ListarUsuariosCollection',
   'views/listarUsuarios/ListarUsuariosListView',
   'text!templates/listarUsuarios/listarUsuariosTemplate.html'
-], function($, _, Backbone, ListarUsuarioModel, ListarUsuariosCollection, ListarUsuariosListView,listarUsuariosTemplate){
+], function($, _, Backbone, ListarUsuarioModel,/* ListarUsuariosCollection,*/ ListarUsuariosListView,listarUsuariosTemplate){
 
   var ListarUsuariosView = Backbone.View.extend({
     el: $("#page"),
