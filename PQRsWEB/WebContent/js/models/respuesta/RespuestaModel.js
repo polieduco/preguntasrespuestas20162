@@ -7,7 +7,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, respuestaModel) {
+], function(_,Backbone) {
   
   var respuestaModel = Backbone.Model.extend({   
 
@@ -41,7 +41,8 @@ define([
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-  return respuestaModel; 
+   
 });                               //se añade   
+  return respuestaModel;
         
     });

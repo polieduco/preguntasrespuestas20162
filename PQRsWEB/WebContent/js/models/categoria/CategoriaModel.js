@@ -9,7 +9,7 @@ define([
   'jquery',       
   'underscore',
   'backbone'
-], function($, _,Backbone, categoriaModel) {
+], function(_,Backbone) {
   
   var categoriaModel = Backbone.Model.extend({
 

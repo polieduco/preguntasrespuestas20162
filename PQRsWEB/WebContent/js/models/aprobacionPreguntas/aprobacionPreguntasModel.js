@@ -6,7 +6,7 @@ define([
   'jquery', 
   'underscore',
   'backbone'
-], function($, _,Backbone, aprobacionPreguntasModel) {
+], function(_,Backbone) {
   
   var aprobacionPreguntasModel = Backbone.Model.extend({
       urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.tbaprobacionpreguntas/",

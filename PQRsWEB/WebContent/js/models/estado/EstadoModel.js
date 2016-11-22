@@ -7,7 +7,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, estadoModel) {
+], function(_,Backbone) {
   
   var estadoModel = Backbone.Model.extend({
         urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.estado/",
@@ -40,7 +40,7 @@ define([
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
+  });  
   return estadoModel; 
-           });                               //se añade
-        
+                                        //se añade     
     });
