@@ -6,7 +6,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, preguntaModel) {
+], function(_,Backbonel) {
   
   var preguntaModel = Backbone.Model.extend({
         urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.pregunta/",
@@ -40,6 +40,7 @@ define([
             return result;
         }
         
-   return preguntaModel; 
-        });                               //se añade       
+    
+        });                               //se añade    
+  return preguntaModel;
     });
