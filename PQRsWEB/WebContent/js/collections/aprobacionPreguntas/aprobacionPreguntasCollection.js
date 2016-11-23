@@ -6,7 +6,7 @@ define([
   'jquery',      
   'underscore',
   'backbone',
-  'models/aprobacionPreguntas/AprobacionPreguntas'
+  'models/aprobacionPreguntas/aprobacionPreguntasModel'
 ], function($, _,Backbone, aprobacionPreguntaModel){
 
 var aprobacionPreguntaCollection = Backbone.Collection.extend({

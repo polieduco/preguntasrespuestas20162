@@ -8,9 +8,9 @@ define([
   'backbone',
   // Pull in the Collection module from above,
   'models/listarUsuario/ListarUsuarioModel',
-  'collections/listarUsuarios/ListarUsuariosCollection',
+  //'collections/listarUsuarios/ListarUsuariosCollection',
   'text!templates/listarUsuarios/listarUsuariosListTemplate.html'
-], function($, _, Backbone, ListarUsuarioModel, ListarUsuariosCollection, listarUsuariosListTemplate){
+], function($, _, Backbone, ListarUsuarioModel, /*ListarUsuariosCollection,*/ listarUsuariosListTemplate){
   var ListarUsuariosListView = Backbone.View.extend({
     el: $("#listarUsuarios-list"),
 

@@ -5,7 +5,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, palabrasclaveModel) {
+], function( _,Backbone) {
   
   var palabrasclaveModel = Backbone.Model.extend({
         urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/",
@@ -38,7 +38,7 @@ define([
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-        
+  });
    return palabrasclaveModel; 
-       });                               //se añade       
+                                     //se añade       
   });
