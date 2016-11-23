@@ -40,7 +40,7 @@ define([
     		//no esta autenticado
     		
     	}*/
-    	$("#mensajes").html("Ususario/calve incorrecta");
+    	$("#mensajes").html("Ususario/clave incorrecta");
     }
   
   });

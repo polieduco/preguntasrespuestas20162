@@ -1,7 +1,7 @@
-    
-// Model for Tbestado entity
-    
-/**
+
+
+// Model for Tbusuario entity
+   /**
  * 
  */
 define([
@@ -9,15 +9,19 @@ define([
   'backbone'
 ], function(_,Backbone) {
   
-  var estadoModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.estado/",
-        idAttribute: 'idestado',
+  var usuarioModel = Backbone.Model.extend({
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbusuario",
+        idAttribute: 'idusuario',
         defaults: {
-            nomestado: ""
+            password: "",
+            identificacion: "",
+            cargo: "",
+            nombre: "",
+            username: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idestado');
+            result.displayName = this.get('idusuario');
             return result;
         },
       
@@ -35,12 +39,13 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.estado/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbusuario';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-  });  
-  return estadoModel; 
-                                        //se añade     
-    });
+    }); 
+    return usuarioModel; 
+      
+});
+    

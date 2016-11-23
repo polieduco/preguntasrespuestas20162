@@ -7,12 +7,12 @@ define([
   'jquery', 
   'underscore',
   'backbone',
-  'models/categoria/Categoria'
+  'models/categoria/categoriaModel'
 ], function($, _,Backbone, categoriaModel){              //se añade
 
 var categoriaCollection = Backbone.Collection.extend({
         model: categoriaModel,  
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.categoria/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbcategoria",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
