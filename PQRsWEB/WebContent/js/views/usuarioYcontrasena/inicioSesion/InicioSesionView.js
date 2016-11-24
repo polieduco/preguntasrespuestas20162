@@ -3,8 +3,8 @@ define([
   'underscore',
   'backbone',
   'text!templates/usuarioYcontrasena/inicioSesion/inicioSesionTemplate.html',
-  'models/usuario/UsuarioModel'
-  ], function($, _, Backbone, inicioSesionTemplate, UsuarioModel){
+  'models/usuario/usuarioModel'
+  ], function($, _, Backbone, inicioSesionTemplate, usuarioModel){
   var InicioSesionView = Backbone.View.extend({
     
 	  el: $("#mdl-layout__container"),
@@ -29,17 +29,17 @@ define([
     login: function(){
     	var usuario = $("#fieldUser").val();
     	var password= $("#fieldPassword").val();
-    	/*
-    	var um = new UsuarioModel();
+    	
+    	var um = new usuarioModel();
     	um.set({username:usuario});
     	um.fetch();
     	if(um.get("username") == usuario){
-    		//autenticado
+    		$("#mensajes").html("ok");
     		
     	}else{
-    		//no esta autenticado
+    		$("#mensajes").html("no ok");
     		
-    	}*/
+    	}
     	$("#mensajes").html("Ususario/clave incorrecta");
     }
   
