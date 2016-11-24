@@ -1,27 +1,27 @@
 
     
-// Model for Tbrespuesta entity
+// Model for Tbrol entity
 /**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function(_,Backbone) {
+  ], function(_,Backbone) {
   
-  var respuestaModel = Backbone.Model.extend({   
+  var rolModel = Backbone.Model.extend({   
 
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/",
-        idAttribute: 'idrespuesta',
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrol",
+        idAttribute: 'idrol',
         defaults: {
-            respuesta: ""
+            nomrol: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idrespuesta');
+            result.displayName = this.get('idrol');
             return result;
         },
-    
+       
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -36,13 +36,13 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrol';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-   
-});                               //se añade   
-  return respuestaModel;
+        
         
     });
+  return rolModel; 
+});    
