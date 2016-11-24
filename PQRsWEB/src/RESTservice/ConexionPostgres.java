@@ -3,6 +3,8 @@ package RESTservice;
 import java.sql.*;
 import java.util.ArrayList;
 
+import javax.swing.JOptionPane;
+
 public class ConexionPostgres {
 
     public String consultar() {
@@ -35,7 +37,7 @@ public class ConexionPostgres {
 		return result;
     }
 
- public String filtrar(int value) {
+    public String filtrar(int value) {
     	
     	ArrayList<String> lista = new ArrayList<String>();
         String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
@@ -64,9 +66,7 @@ public class ConexionPostgres {
 		return result;
     }
  
- 
- 
- public String listarUsuarios() {
+    public String listarUsuarios() {
  	
  	ArrayList<String> lista = new ArrayList<String>();
      String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
@@ -96,5 +96,32 @@ public class ConexionPostgres {
      String result = "- "+lista.toString().replace(",", "\n-").replace("[", "").replace("]", "");        
 		return result;
  }
+
+    public String findPassword(String value) {
+ 	     String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
+         "user=postgres&password=yeni1995";
+ 	     String sResult="";
+     try {
+         Class.forName("org.postgresql.Driver");
+         Connection conexion = DriverManager.getConnection(cc);
+         Statement comando = conexion.createStatement();
+         String sql = "select count(*) from tbusuario where correo = '"+value+"'";
+         System.out.print(sql);
+         ResultSet resultado = comando.executeQuery(sql);
+         if(resultado.next())
+         {
+        	 sResult="Email Enviado";
+         }
+         else{
+        	 sResult="No existe mail!";
+         }
+       
+     } catch(Exception e) {
+         System.out.println("Error al realizar  esta accion  tipo de error:"+e.getMessage());
+         sResult="Error al realizar  esta accion  tipo de error:"+e.getMessage();
+     }
+     return sResult;
+ }
  
+
 }
