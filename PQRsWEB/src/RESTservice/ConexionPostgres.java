@@ -9,7 +9,7 @@ public class ConexionPostgres {
     	
     	ArrayList<String> lista = new ArrayList<String>();
         String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Abcd";
+            "user=postgres&password=Yeni1995";
         try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
