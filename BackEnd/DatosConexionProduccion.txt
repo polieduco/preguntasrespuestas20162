@@ -2,3 +2,16 @@ Host:preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com
 Port: 5432
 User Name: gestor1
 Password: Prueba123
+
+La base de datos ManageQuestion tiene las siguientes entidades: 
+
+TbEstado 
+TbRol 
+TbUsuario 
+TbAreaAprobacion 
+TbPregunta 
+TbRespuesta 
+TbCategoria 
+TbPalabrasClave 
+TbPreguntasXPalabrasClave 
+TbAprobacionPreguntas 
