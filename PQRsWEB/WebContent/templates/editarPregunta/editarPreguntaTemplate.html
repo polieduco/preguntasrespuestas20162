@@ -73,11 +73,29 @@
               <p> Creditos, Bienestar, Presencial, Virtual, Requisito de Grado</p>
           </div>
           <!-- Colored raised button -->
- <!--boton eviar y aprovar pregunta  -->         
-<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored">
-  enviar!
-</button>
+ <form method="get" onsubmit="return false;">
+            <?php // Empieza el código php
 
+              $pregun = $_GET['text-pregunta'];
+              $resp = $_GET['text-resp'];
+
+              $decanatura = FALSE;
+              $facultad = FALSE;
+              $bienestar = FALSE;
+
+              $pclave =$_GET['pclave'];
+
+              if (!empty($pregun) && !empty($resp)) {
+                  
+              }
+              else{
+                 echo("los campos no pueden estar vacios");
+              }
+            ?>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id ="btnEnviar">
+      enviar!
+    </button>
+  </form>
 
         </div>
   </main>
