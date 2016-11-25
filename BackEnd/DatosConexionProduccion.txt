@@ -1,0 +1,4 @@
+Host:preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com
+Port: 5432
+User Name: gestor1
+Password: Prueba123
