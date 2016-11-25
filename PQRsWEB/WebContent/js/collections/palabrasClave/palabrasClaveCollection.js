@@ -6,12 +6,12 @@ define([
   'jquery',       
   'underscore',
   'backbone',
-  'models/palabrasclave/PalabrasClave'
+  'models/palabrasclave/palabrasclaveModel'
 ], function($, _,Backbone, palabrasclaveModel){              //se añade
 
 var palabrasclaveCollection = Backbone.Collection.extend({
 model: palabrasclaveModel, 
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbpalabrasclave",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

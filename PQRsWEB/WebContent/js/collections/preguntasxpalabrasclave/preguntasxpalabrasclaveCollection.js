@@ -6,13 +6,13 @@ define([
  'jquery', 
   'underscore',
   'backbone',
-  'models/preguntasxpalabrasclave/PreguntasxPalabrasClave'
+  'models/preguntasxpalabrasclave/preguntasXpalabrasClaveModel'
 ], function($, _,Backbone, preguntasxpalabrasclaveModel){              //se añade
 
 var preguntasxpalabrasclaveCollection = Backbone.Collection.extend({
 model: preguntasxpalabrasclaveModel, 
 
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.preguntasxpalabrasclave/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbpreguntasxpalabrasclave",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

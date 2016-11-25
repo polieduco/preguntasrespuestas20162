@@ -6,12 +6,12 @@ define([
   'jquery',      
   'underscore',
   'backbone',
-  'models/aprobacionPreguntas/AprobacionPreguntas'
+  'models/aprobacionPreguntas/aprobacionPreguntasModel'
 ], function($, _,Backbone, aprobacionPreguntaModel){
 
 var aprobacionPreguntaCollection = Backbone.Collection.extend({
         model: aprobacionPreguntaModel,
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.aprobacionpreguntas/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbaprobacionpreguntas",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

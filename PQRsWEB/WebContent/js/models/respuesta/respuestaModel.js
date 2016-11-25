@@ -1,28 +1,27 @@
 
     
-// Model for Tbpreguntasxpalabrasclave entity
+// Model for Tbrespuesta entity
 /**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, preguntasxpalabrasclaveModel) {
+], function(_,Backbone) {
   
-  var preguntasxpalabrasclaveModel = Backbone.Model.extend({
+  var respuestaModel = Backbone.Model.extend({   
 
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.preguntasxpalabrasclave/",
-        idAttribute: 'idpreguntasxpalabrasclave',
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrespuesta",
+        idAttribute: 'idrespuesta',
         defaults: {
-            idestado: ""
+            respuesta: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idpreguntasxpalabrasclave');
+            result.displayName = this.get('idrespuesta');
             return result;
         },
-
-
+    
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -37,12 +36,13 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.preguntasxpalabrasclave/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrespuesta';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
- });
-
-  return preguntasxpalabrasclave; 
-});                               //se añade
+   
+});                               //se añade   
+  return respuestaModel;
+        
+    });

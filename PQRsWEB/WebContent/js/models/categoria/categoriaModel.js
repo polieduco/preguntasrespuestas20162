@@ -1,24 +1,25 @@
 
+ 
+// Model for Tbcategoria entity
     
-// Model for Tbrespuesta entity
 /**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, respuestaModel) {
+], function(_,Backbone) {
   
-  var respuestaModel = Backbone.Model.extend({   
+  var categoriaModel = Backbone.Model.extend({
 
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/",
-        idAttribute: 'idrespuesta',
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbcategoria",
+        idAttribute: 'idcategoria',
         defaults: {
-            respuesta: ""
+            nomcategoria: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idrespuesta');
+            result.displayName = this.get('idcategoria');
             return result;
         },
     
@@ -36,12 +37,14 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbcategoria';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-  return respuestaModel; 
-});                               //se añade   
+ });
+ return categoriaModel;  
         
     });
+    
+    

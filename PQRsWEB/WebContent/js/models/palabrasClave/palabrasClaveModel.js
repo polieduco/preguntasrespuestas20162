@@ -1,29 +1,24 @@
-
- 
-// Model for Tbcategoria entity
-    
-/**
+// Model for Tbpalabrasclave entity
+   /**
  * 
  */
 define([
-  'jquery',       
   'underscore',
   'backbone'
-], function($, _,Backbone, categoriaModel) {
+], function( _,Backbone) {
   
-  var categoriaModel = Backbone.Model.extend({
-
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.categoria/",
-        idAttribute: 'idcategoria',
+  var palabrasclaveModel = Backbone.Model.extend({
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbpalabrasclave",
+        idAttribute: 'idclave',
         defaults: {
-            nomcategoria: ""
+            palabraclave: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idcategoria');
+            result.displayName = this.get('idclave');
             return result;
         },
-    
+       
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -38,14 +33,12 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.categoria/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbpalabrasclave';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
- });
- return categoriaModel;  
-        
-    });
-    
-    
+  });
+   return palabrasclaveModel; 
+                                     //se añade       
+  });

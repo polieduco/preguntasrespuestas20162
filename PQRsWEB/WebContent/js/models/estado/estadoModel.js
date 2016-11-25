@@ -1,24 +1,26 @@
-// Model for Tbpalabrasclave entity
-   /**
+    
+// Model for Tbestado entity
+    
+/**
  * 
  */
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, palabrasclaveModel) {
+], function(_,Backbone) {
   
-  var palabrasclaveModel = Backbone.Model.extend({
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/",
-        idAttribute: 'idclave',
+  var estadoModel = Backbone.Model.extend({
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbestado",
+        idAttribute: 'idestado',
         defaults: {
-            palabraclave: ""
+            nomestado: ""
         },
         toViewJson: function () {
             var result = this.toJSON(); // displayName property is used to render item in the list
-            result.displayName = this.get('idclave');
+            result.displayName = this.get('idestado');
             return result;
         },
-       
+      
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {
@@ -33,12 +35,12 @@ define([
                 }}
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.palabrasclave/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbestado';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;
         }
-        
-   return palabrasclaveModel; 
-       });                               //se añade       
-  });
+  });  
+  return estadoModel; 
+                                        //se añade     
+    });
