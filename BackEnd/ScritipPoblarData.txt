@@ -11,15 +11,15 @@ INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, passwo
 INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (10,'Javier Acero',7612996,'Profesor','Jav','1234',2);
 
 
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (3,'¿Donde puedo pedir el certificado de estudios?','17/10/2016','16/12/2016','17/10/2016',1);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (11,'¿Donde puedo pedir el certificado de estudios?','17/10/2016','16/12/2016','17/10/2016',1);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (4,'¿Por donde puedo pedir las notas del corte?','17/10/2016','16/12/2016','17/10/2016',5);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (5,'¿En que periodos se realizan las inscripciones?','17/10/2016','16/12/2016','17/10/2016',3);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (6,'¿Dónde puedo recoger el recibo de pago?','17/10/2016','16/12/2016','17/10/2016',10);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (7,'¿Cuándo empienzan las clases?','17/10/2016','16/12/2016','17/10/2016',7);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (8,'¿Cuántos semestres tiene la ingenieria indistrial?','17/10/2016','16/12/2016','17/10/2016',1);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (9,'¿Cuántas sedes tiene la universidad?','17/10/2016','16/12/2016','17/10/2016',4);
-INSERT INTO tbpregunta(idpregunta, pregunta, fechainiciovigencia, fechafinvigencia, fechacreacion, idusuario)VALUES (10,'¿Cuántos creditos on necesarios para graduarse?','17/10/2016','16/12/2016','17/10/2016',10);
+
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Por donde puedo pedir las notas del corte?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Donde puedo pedir el certificado de estudios?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿En que periodos se realizan las inscripciones?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Dónde puedo recoger el recibo de pago?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuándo empienzan las clases?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántos semestres tiene la ingenieria indistrial?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántas sedes tiene la universidad?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántos creditos on necesarios para graduarse?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
 
 
 
