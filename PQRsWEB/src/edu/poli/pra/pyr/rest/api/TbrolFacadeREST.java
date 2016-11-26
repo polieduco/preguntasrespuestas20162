@@ -28,7 +28,7 @@ import javax.ws.rs.core.MediaType;
 @Path("edu.poli.proyecto.test.tbrol")
 public class TbrolFacadeREST extends AbstractFacade<Tbrol> {
 
-    @PersistenceContext(unitName = "WebApplication3PU")
+    @PersistenceContext(unitName = "PQRsWEB")
     private EntityManager em;
 
     public TbrolFacadeREST() {

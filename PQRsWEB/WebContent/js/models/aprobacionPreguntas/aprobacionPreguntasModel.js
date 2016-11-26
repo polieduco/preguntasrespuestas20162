@@ -3,13 +3,12 @@
  * 
  */
 define([
-  'jquery', 
   'underscore',
   'backbone'
 ], function(_,Backbone) {
   
   var aprobacionPreguntasModel = Backbone.Model.extend({
-      urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.tbaprobacionpreguntas/",
+      urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbaprobacionpreguntas",
       idAttribute: 'idaprobacionpregunta',
       defaults: {
           idestado: ""
@@ -33,7 +32,7 @@ define([
               }}
           
           if (method == 'create') {
-              options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.aprobacionpreguntas/';
+              options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbaprobacionpreguntas';
           }
           var result = Backbone.sync(method, model, _.extend(options, errorHandler));
           return result;

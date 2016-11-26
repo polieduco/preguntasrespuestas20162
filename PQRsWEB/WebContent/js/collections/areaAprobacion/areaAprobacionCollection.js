@@ -6,13 +6,13 @@ define([
   'jquery',
   'underscore',
   'backbone',
-  'models/araeaAprobacion/AreaAprobacion'
+  'models/araeaAprobacion/areaAprobacionModel'
 ], function($, _,Backbone, areaAprobacionModel){              //se añade
 
 var areaAprobacion = Backbone.Collection.extend({
 
         model: models.areaAprobacion,
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.areaAprobacion/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbareaaprobacion",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

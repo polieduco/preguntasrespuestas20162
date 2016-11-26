@@ -28,7 +28,7 @@ import javax.ws.rs.core.MediaType;
 @Path("edu.poli.proyecto.test.tbareaaprobacion")
 public class TbareaaprobacionFacadeREST extends AbstractFacade<Tbareaaprobacion> {
 
-    @PersistenceContext(unitName = "WebApplication3PU")
+    @PersistenceContext(unitName = "PQRsWEB")
     private EntityManager em;
 
     public TbareaaprobacionFacadeREST() {

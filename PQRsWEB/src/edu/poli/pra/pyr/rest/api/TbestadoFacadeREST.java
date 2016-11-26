@@ -28,7 +28,7 @@ import javax.ws.rs.core.MediaType;
 @Path("edu.poli.proyecto.test.tbestado")
 public class TbestadoFacadeREST extends AbstractFacade<Tbestado> {
 
-    @PersistenceContext(unitName = "WebApplication3PU")
+    @PersistenceContext(unitName = "PQRsWEB")
     private EntityManager em;
 
     public TbestadoFacadeREST() {
