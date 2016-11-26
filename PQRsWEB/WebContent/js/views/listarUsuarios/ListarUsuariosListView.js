@@ -5,8 +5,10 @@ define([
   'jquery',
   'underscore',
   'backbone',
+  'models/usuario/usuarioModel',
   'collections/usuario/usuarioCollection',
   'text!templates/listarUsuarios/listarUsuariosListTemplate.html'
+], function($, _, Backbone, usuarioModel, usuarioCollection, listarUsuariosListTemplate){
   var ListarUsuariosListView = Backbone.View.extend({
     el: $("#listarUsuarios-list"),
 
