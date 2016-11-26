@@ -29,18 +29,18 @@ define([
     login: function(){
     	var usuario = $("#fieldUser").val();
     	var password= $("#fieldPassword").val();
-    	/*
-    	var um = new UsuarioModel();
-    	um.set({username:usuario});
-    	um.fetch();
-    	if(um.get("username") == usuario){
-    		//autenticado
+    	
+    	
+    	if("poli" == usuario && "123" == password){
+    		$("#mensajes").html("correcta");
+    		//$url="index.html?#/vistaPrincipal"; 
+    		//echo "<SCRIPT>window.location='$url';</SCRIPT>"; 
     		
     	}else{
-    		//no esta autenticado
+    		$("#mensajes").html("Usuario/clave incorrecta");
     		
-    	}*/
-    	$("#mensajes").html("Ususario/clave incorrecta");
+    	}
+    	
     }
   
   });
