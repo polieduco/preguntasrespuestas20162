@@ -3,8 +3,8 @@ define([
   'underscore',
   'backbone',
   'text!templates/usuarioYcontrasena/inicioSesion/inicioSesionTemplate.html',
-  'models/usuario/UsuarioModel'
-  ], function($, _, Backbone, inicioSesionTemplate, UsuarioModel){
+  'models/usuario/usuarioModel'
+  ], function($, _, Backbone, inicioSesionTemplate, usuarioModel){
   var InicioSesionView = Backbone.View.extend({
     
 	  el: $("#mdl-layout__container"),
