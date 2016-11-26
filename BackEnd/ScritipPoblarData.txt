@@ -22,15 +22,16 @@ INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreac
 INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántos creditos on necesarios para graduarse?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
 
 
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (2,'El valor del semestre es 3.000.000',1)
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (3,'En cualquier sede del Politecnico GranColombiano',4)
 
-INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (2,'El valor del semestre es 3.000.000',2);
-INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (3,'En cualquier sede del Politecnico GranColombiano',3);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (4,'Se pueden consultar por el portal de internet',4);
-INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (5,'En Enero y Julio de cada año',5);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (5,'En Enero y Julio de cada año',7);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (6,'En cualquier sede del Politecnico GranColombiano o imprimirlo',6);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (7,'En febrero y Agosto de cada año',7);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (8,'9 semestres',8);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (9,'La universidad tiene 3 sedes',9);
 INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (10,'180 Creditos',10);
+
 
 .
