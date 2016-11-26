@@ -6,12 +6,12 @@ define([
   'jquery', 
   'underscore',
   'backbone',
-  'models/respuesta/Respuesta'
+  'models/respuesta/respuestaModel'
 ], function($, _,Backbone, respuestaModel){              //se añade
 
 var respuestaCollection = Backbone.Collection.extend({
  model: respuestaModel, 
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.respuesta/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrespuesta",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

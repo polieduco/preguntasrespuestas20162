@@ -9,7 +9,7 @@ define([
   
   var areaAprobacionModel = Backbone.Model.extend({
 
-        urlRoot: "http://localhost:19749/WebApplication3/webresources/dbclasses.areaAprobacion/",
+        urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbareaaprobacion",
         idAttribute: 'idareaAprobacion',
         defaults: {
             nomarea: ""
@@ -34,7 +34,7 @@ define([
                 }};
             
             if (method == 'create') {
-                options.url = 'http://localhost:19749/WebApplication3/webresources/dbclasses.areaAprobacion/';
+                options.url = 'http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbareaaprobacion';
             }
             var result = Backbone.sync(method, model, _.extend(options, errorHandler));
             return result;

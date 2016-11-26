@@ -6,13 +6,13 @@ define([
   'jquery',        
   'underscore',
   'backbone',
-  'models/estado/Estado'
+  'models/estado/estadoModel'
 ], function($, _,Backbone, estadoModel){              //se añade
 
 var estadoCollection = Backbone.Collection.extend({
  model: estadoModel, 
 
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.estado/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbestado",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

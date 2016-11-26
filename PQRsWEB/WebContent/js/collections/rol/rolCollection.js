@@ -6,13 +6,13 @@ define([
   'jquery', 
   'underscore',
   'backbone',
-  'models/rol/Rol'
+  'models/rol/rolModel'
 ], function($, _,Backbone, rolModel){              //se añade
 
 var rol = Backbone.Collection.extend({
  model: rolModel,   
 
-        url: "http://localhost:19749/WebApplication3/webresources/dbclasses.rol/",
+        url: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbrol",
         sync: function (method, model, options) {
             options || (options = {});
             var errorHandler = {

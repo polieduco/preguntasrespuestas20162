@@ -26,9 +26,9 @@ import javax.ws.rs.core.MediaType;
  */
 @Stateless
 @Path("edu.poli.proyecto.test.tbpalabrasclave")
-public class TbpalabrasclaveFacadeREST extends AbstractFacade<Tbpalabrasclave> {
+public class TbpaPQRsWEBlabrasclaveFacadeREST extends AbstractFacade<Tbpalabrasclave> {
 
-    @PersistenceContext(unitName = "WebApplication3PU")
+    @PersistenceContext(unitName = "PQRsWEB")
     private EntityManager em;
 
     public TbpalabrasclaveFacadeREST() {
