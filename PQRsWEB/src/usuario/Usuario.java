@@ -1,12 +1,21 @@
 package usuario;
 
 import java.io.IOException;
+import java.util.Properties;
+
 import RESTservice.*;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.*;
+import javax.mail.*;
+import javax.mail.internet.*;
+import javax.activation.*;
+
+import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeBodyPart;
 
 import RESTservice.*;
 @WebServlet("/Usuario")
@@ -21,11 +30,11 @@ public class Usuario  extends HttpServlet {
 			userEmail = "si esta comunicando";
 		}
 		String resultFind = conn.findPassword(userEmail);
+		
 		System.out.println(conn.findPassword(userEmail));
 		
 		String greetings = resultFind;
-		
-		 
+				 
 		response.setContentType("text/plain");
 		response.getWriter().write(greetings);
 	}

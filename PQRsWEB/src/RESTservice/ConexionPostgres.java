@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 import javax.swing.JOptionPane;
 
+import sun.security.util.Password;
+import edu.poli.pra.pyr.rest.service.Tbusuario;
+
 public class ConexionPostgres {
 
     public String consultar() {
@@ -109,11 +112,16 @@ public class ConexionPostgres {
          System.out.print(sql);
          ResultSet resultado = comando.executeQuery(sql);
          if(resultado.next())
-         {
-        	 sResult="Email Enviado";
+         {        	 
+        	 String sql2 = "select password from tbusuario where correo = '"+value+"'";
+        	 ResultSet resultado2 = comando.executeQuery(sql2);
+        	 if(resultado2.next()){
+        		 String retorno = resultado2.getString("Password");
+        		 sResult = retorno;
+        	 }
          }
          else{
-        	 sResult="No existe mail!";
+        	 sResult="No existe mail/usuario";
          }
        
      } catch(Exception e) {
