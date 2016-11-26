@@ -10,10 +10,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.*;
-import javax.mail.*;
-import javax.mail.internet.*;
-import javax.activation.*;
 
 import com.sun.xml.internal.messaging.saaj.packaging.mime.internet.MimeBodyPart;
 
@@ -31,7 +27,7 @@ public class Usuario  extends HttpServlet {
 		}
 		String resultFind = conn.findPassword(userEmail);
 		
-		System.out.println(conn.findPassword(userEmail));
+		System.out.println("La contraseña del usuario es: "+conn.findPassword(userEmail));
 		
 		String greetings = resultFind;
 				 
