@@ -1,8 +1,8 @@
 // Author: Thomas Davis <thomasalwyndavis@gmail.com>
 // Filename: main.js
 
-// Require.js allows us to configure shortcut alias
-// Their usage will become more apparent futher along in the tutorial.
+// Require.js nos permite configurar alias de acceso directo
+// Su uso se hará más evidente a lo largo del futher en el tutorial.
 require.config({
   paths: {
     jquery: 'libs/jquery/jquery-min',
@@ -14,11 +14,11 @@ require.config({
 });
 
 require([
-  // Load our app module and pass it to our definition function
+  // Cargar nuestro módulo de aplicación y pasarlo a nuestra definición de funciones
   'app',
 
 ], function(App){
-  // The "app" dependency is passed in as "App"
-  // Again, the other dependencies passed in are not "AMD" therefore don't pass a parameter to this function
+  // La dependencia "app" se pasa como "App"
+  // Una vez más, las otras dependencias pasó no son "AMD" por lo tanto, no pasa un parámetro a esta función
   App.initialize();
 });

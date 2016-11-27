@@ -1,0 +1,37 @@
+INSERT INTO tbrol(idrol, nomrol)VALUES (2, 'Usuario');
+
+
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (3,'Mario Casas',2149831,'Director de Programa','Ma','1234',2);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (4,'Cristian',15890227,'Decado','Cr','1234',2);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (5,'Alejandra',12992589,'Vicerector','Al','1234',2);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (6,'Juan Avila',9928122,'Director de Programa','Ju','1234',2);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (7,'Andrea Garzon',3564703,'Profesor','An','1234',1);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (8,'Sebastian',8397902,'Profesor','Se','1234',2);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (9,'Eduardo',17165896,'Director de Programa','Ed','1234',1);
+INSERT INTO tbusuario(idusuario, nombre, identificacion, cargo, username, password, idrol) VALUES (10,'Javier Acero',7612996,'Profesor','Jav','1234',2);
+
+
+
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Por donde puedo pedir las notas del corte?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Donde puedo pedir el certificado de estudios?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿En que periodos se realizan las inscripciones?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Dónde puedo recoger el recibo de pago?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuándo empienzan las clases?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántos semestres tiene la ingenieria indistrial?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántas sedes tiene la universidad?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+INSERT INTO tbpregunta( Pregunta,FechaInicioVigencia,FechaFinVigencia,FechaCreacion,IdUsuario)VALUES ('¿Cuántos creditos on necesarios para graduarse?',TIMESTAMP '2016-12-17',TIMESTAMP '2016-12-18',TIMESTAMP '2016-12-10',3);
+
+
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (2,'El valor del semestre es 3.000.000',1)
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (3,'En cualquier sede del Politecnico GranColombiano',4)
+
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (4,'Se pueden consultar por el portal de internet',4);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (5,'En Enero y Julio de cada año',7);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (6,'En cualquier sede del Politecnico GranColombiano o imprimirlo',6);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (7,'En febrero y Agosto de cada año',7);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (8,'9 semestres',8);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (9,'La universidad tiene 3 sedes',9);
+INSERT INTO tbrespuesta(idrespuesta, respuesta, idpregunta)VALUES (10,'180 Creditos',10);
+
+
+.

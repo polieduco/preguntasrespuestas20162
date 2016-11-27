@@ -1,0 +1,15 @@
+  <% _.each(listarUsuarios, function(listarUsuario){ %>
+  
+<tr>
+
+        <td><%= listarUsuario.get("idUsuario") %></td>
+        <td><%= listarUsuario.get("rol") %></td>
+        <td><%= listarUsuario.get("nombre") %></td>
+        <td><%= listarUsuario.get("apellidos") %></td>
+        <td><%= listarUsuario.get("estado") %></td>
+        <td>
+			<input type="button" value="text" class="mdl-button mdl-js-button mdl-button--raised " id="btnActiInac">
+</td>
+	</tr>
+  <% }); %>
+
