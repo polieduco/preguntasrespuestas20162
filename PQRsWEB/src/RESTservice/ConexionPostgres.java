@@ -8,8 +8,8 @@ public class ConexionPostgres {
     public String consultar() {
     	
     	ArrayList<String> lista = new ArrayList<String>();
-        String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Abcd";
+        String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";
         try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
@@ -38,9 +38,9 @@ public class ConexionPostgres {
  public String filtrar(int value) {
     	
     	ArrayList<String> lista = new ArrayList<String>();
-        String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Abcd";
-        try {
+String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";        
+try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
             Statement comando = conexion.createStatement();
@@ -69,8 +69,8 @@ public class ConexionPostgres {
  public String listarUsuarios() {
  	
  	ArrayList<String> lista = new ArrayList<String>();
-     String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-         "user=postgres&password=1234Abcd";
+String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";
      try {
          Class.forName("org.postgresql.Driver");
          Connection conexion = DriverManager.getConnection(cc);
@@ -97,5 +97,34 @@ public class ConexionPostgres {
      String result = "- "+lista.toString().replace(",", "\n-").replace("[", "").replace("]", "");        
 		return result;
  }
+ 
+	public String findPassword(String value) {
+		String cc = "jdbc:postgresql://localhost:5432/managequestion?" + "user=postgres&password=yeni1995";
+		String sResult="";
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection conexion = DriverManager.getConnection(cc);
+			Statement comando = conexion.createStatement();
+			String sql = "select count(*) from tbusuario where correo = '"+value+"'";
+			System.out.print(sql);
+			ResultSet resultado = comando.executeQuery(sql);
+			if(resultado.next()){        	 
+				String sql2 = "select password from tbusuario where correo = '"+value+"'";
+				ResultSet resultado2 = comando.executeQuery(sql2);
+				if(resultado2.next()){
+					String retorno = resultado2.getString("Password");
+					sResult = retorno;
+					}
+				}
+			else{
+				sResult="No existe mail/usuario";
+				}
+			} catch(Exception e) {
+				System.out.println("Error al realizar  esta accion  tipo de error:"+e.getMessage());
+				sResult="Error al realizar  esta accion  tipo de error:"+e.getMessage();
+				}
+		return sResult;
+		}
+
  
 }

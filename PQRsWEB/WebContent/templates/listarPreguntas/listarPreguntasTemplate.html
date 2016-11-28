@@ -1,12 +1,14 @@
 <div class="main">
 
+	<!--usamos mdl como plantilla para trabajar-->
 	<div class="mdl-cell mdl-cell--12-col">
 		<div class="docs-text-styling component-title">
 			<h3>LISTA DE PREGUNTAS</h3>
 		</div>
 
 		<form action="#">
-			<div
+		<!--esta division contiene los parametros para filtrar que se ingresaran por el usuario-->
+			<div				
 				class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 				<input class="mdl-textfield__input" type="text" id="filtro"
 					name="filtro"> <label class="mdl-textfield__label"
@@ -15,6 +17,7 @@
 		</form>
 		<section class="wrapper">
 			<section class="main">
+					<!--esta seccion contiene los parametros de ordenamiento-->
 				<button
 					class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
 					ORDENAR</button>
@@ -22,7 +25,8 @@
 					<option value="#Fecha">Fecha</option>
 					<option value="#Calificacion">Calificacion</option>
 				</select>
-				<table
+				<!--esta tabla contiene la lista de preguntas con sus caracteristicas-->
+				<table				
 					class="mdl-data-table mdl-js-data-table mdl-data-table mdl-shadow--2dp">
 					<thead>
 						<tr>
@@ -33,7 +37,7 @@
 							<th class="encs">Calificacion</th>					
 						</tr>
 					</thead>
-					<tbody>
+					<tbody>					
 						<!-- Se cambiara por contenido dinamico de la base de datos -->
 						<tr>
 						
@@ -81,6 +85,7 @@
 						</tr>
 					</tbody>
 				</table>
+				<!--son botones que ayudaran a desplazarse por la tabla-->
 				<button
 					class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored">
 					0</button>
