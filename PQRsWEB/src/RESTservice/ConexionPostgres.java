@@ -98,4 +98,33 @@ String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.co
 		return result;
  }
  
+	public String findPassword(String value) {
+		String cc = "jdbc:postgresql://localhost:5432/managequestion?" + "user=postgres&password=yeni1995";
+		String sResult="";
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection conexion = DriverManager.getConnection(cc);
+			Statement comando = conexion.createStatement();
+			String sql = "select count(*) from tbusuario where correo = '"+value+"'";
+			System.out.print(sql);
+			ResultSet resultado = comando.executeQuery(sql);
+			if(resultado.next()){        	 
+				String sql2 = "select password from tbusuario where correo = '"+value+"'";
+				ResultSet resultado2 = comando.executeQuery(sql2);
+				if(resultado2.next()){
+					String retorno = resultado2.getString("Password");
+					sResult = retorno;
+					}
+				}
+			else{
+				sResult="No existe mail/usuario";
+				}
+			} catch(Exception e) {
+				System.out.println("Error al realizar  esta accion  tipo de error:"+e.getMessage());
+				sResult="Error al realizar  esta accion  tipo de error:"+e.getMessage();
+				}
+		return sResult;
+		}
+
+ 
 }
