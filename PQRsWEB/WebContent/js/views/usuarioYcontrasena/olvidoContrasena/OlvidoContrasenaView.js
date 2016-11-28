@@ -9,14 +9,25 @@ define([
 ], function($, _, Backbone, olvidoContrasenaTemplate){
 
   var OlvidoContrasenaView = Backbone.View.extend({
-    el: $("#page"),
-    render: function(){
-    	$('.menu li').removeClass('active');
-        $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-        this.$el.html(olvidoContrasenaTemplate);
-    }
-  });
-
+	  el: $("#mdl-layout__container"),
+	    
+	    render: function(){
+	      $('.menu li').removeClass('active');
+	      $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
+	      this.$el.html(olvidoContrasenaTemplate);
+	      /* Simple VanillaJS to toggle class */
+	    },
+});
   return OlvidoContrasenaView;
 });
 
+function sendEmail(e){
+	let dataEmail=$('#mail').val();
+	$.get('Usuario', {
+        userEmail : dataEmail
+		}, function(responseText) {
+			console.log(responseText);
+		});
+	 e.preventDefault();
+	return false;
+}
