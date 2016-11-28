@@ -1,25 +1,22 @@
 <div class="main">
-    
- 
- <div class="mdl-cell mdl-cell--12-col">
+ 	<div class="mdl-cell mdl-cell--12-col">
         <div class="docs-text-styling component-title">
-          <h3>Olvido cotraseÃ±a</h3>
+          <h3>Olvido cotraseña</h3>
         </div>
-
-    <!--Google Font - Work Sans-->
-
-<div class="container">
-
-        <div class="field">
-          <input type="text" id="fieldUser" class="input" required pattern=.*\S.* />
-          <label for="fieldUser" class="label">Correo</label>
-        </div>
-        <div class="profile__footer">
-          <button class="btn">Enviar</button>
+		<div class="container">
+				<div class="row">
+				<form class="col s12" onSubmit="sendEmail(event)">
+		      		<div class="row">
+		        		<div class="input-field col s6">
+							<input id="mail" type="email" class="validate" required>
+		          		</div>
+						<div class="input-field col s6">
+							<button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+		        		</div>
+		      		</div>
+		    	</form>
+		  		</div>
 		</div>
-		
-  </div>
-
-</div>
+	</div>
 </div>
 
