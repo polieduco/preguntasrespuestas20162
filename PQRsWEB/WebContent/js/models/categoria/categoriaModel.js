@@ -6,18 +6,19 @@
  * 
  */
 define([
+//librerias javascript
   'underscore',
   'backbone'
-], function(_,Backbone) {
+], function(_,Backbone) {//se extienden todos los métodos y atributos de la clase Backbone.Model en el modelo actual.
   
-  var categoriaModel = Backbone.Model.extend({
-
+  var categoriaModel = Backbone.Model.extend({//contiene métodos para la creación y manipulación de objetos JSON como cadenas, objeto valor,
+	// valores predeterminados del modelo actual
         urlRoot: "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbcategoria",
         idAttribute: 'idcategoria',
         defaults: {
             nomcategoria: ""
         },
-        toViewJson: function () {
+        toViewJson: function () {//Objeto valor es una cadena, número, booleano, nulo, objeto o arreglo
             var result = this.toJSON(); // displayName property is used to render item in the list
             result.displayName = this.get('idcategoria');
             return result;
@@ -33,7 +34,7 @@ define([
                     // headers has to be set on the REST server side.
                     // Otherwise the JS client has to be copied into the
                     // some (f.e. the same) Web project on the same domain
-                    alert('Unable to fulfil the request');
+                    alert('Unable to fulfil the request');// Muestra notificación como una alerta
                 }}
             
             if (method == 'create') {

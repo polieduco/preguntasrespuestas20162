@@ -8,8 +8,8 @@ public class ConexionPostgres {
     public String consultar() {
     	
     	ArrayList<String> lista = new ArrayList<String>();
-        String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Abcd";
+        String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";
         try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
@@ -38,9 +38,9 @@ public class ConexionPostgres {
  public String filtrar(int value) {
     	
     	ArrayList<String> lista = new ArrayList<String>();
-        String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-            "user=postgres&password=1234Abcd";
-        try {
+String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";        
+try {
             Class.forName("org.postgresql.Driver");
             Connection conexion = DriverManager.getConnection(cc);
             Statement comando = conexion.createStatement();
@@ -69,19 +69,20 @@ public class ConexionPostgres {
  public String listarUsuarios() {
  	
  	ArrayList<String> lista = new ArrayList<String>();
-     String cc = "jdbc:postgresql://localhost:5432/managequestion?" +
-         "user=postgres&password=1234Abcd";
+String cc = "jdbc:postgresql://preguntas.csknyphdwtke.us-west-2.rds.amazonaws.com:5432/ManageQuestion?" +
+            "user=gestor1&password=Prueba123";
      try {
          Class.forName("org.postgresql.Driver");
          Connection conexion = DriverManager.getConnection(cc);
          Statement comando = conexion.createStatement();
          String sql = 
-             "select nombre,identificacion,username from tbusuario";
+             "select nombre,identificacion,username,password from tbusuario";
          ResultSet resultado = comando.executeQuery(sql);
          while(resultado.next()) {
          	String i = resultado.getString("nombre");
             String n = resultado.getString("identificacion");
             String u = resultado.getString("username");
+            String p = resultado.getString("password");
 //             String a = resultado.getString('"'+"IdPregunta"+'"');
              lista.add(i+" - "+ n+" - "+ u) ;  
          }

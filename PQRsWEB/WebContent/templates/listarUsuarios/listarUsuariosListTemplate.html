@@ -1,26 +1,15 @@
   <% _.each(listarUsuarios, function(listarUsuario){ %>
+  
 <tr>
-        <td>
-        <label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select mdl-js-ripple-effect--ignore-events is-upgraded" data-upgraded=",MaterialCheckbox,MaterialRipple">
-        <input type="checkbox" class="mdl-checkbox__input">
-        <span class="mdl-checkbox__focus-helper">
-        </span><span class="mdl-checkbox__box-outline">
-        <span class="mdl-checkbox__tick-outline">
-        </span>
-        </span>
-        
-        <span class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center" data-upgraded=",MaterialRipple">
-        
-        <span class="mdl-ripple">
-        </span>
-        </span>
-        </label>
-        </td> 
-        <td><%= listarUsuario.get("idUsuario") %></td>
-        <td><%= listarUsuario.get("rol") %></td>
+
+        <td><%= listarUsuario.get("idusuario") %></td>
+        <td><%= listarUsuario.get("idrol") %></td>
         <td><%= listarUsuario.get("nombre") %></td>
-        <td><%= listarUsuario.get("apellidos") %></td>
-        <td><%= listarUsuario.get("estado") %></td>
+        <td><%= listarUsuario.get("username") %></td>
+        <td><%= listarUsuario.get("cargo") %></td>
+        <td>
+			<button  	value="Activo" class="mdl-button mdl-js-button mdl-button--raised " id="btnActiInac">Activo</button>
+</td>
 	</tr>
   <% }); %>
 
