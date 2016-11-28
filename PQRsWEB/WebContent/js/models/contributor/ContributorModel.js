@@ -4,7 +4,7 @@
 define([
   'underscore',
   'backbone'
-], function($, _,Backbone, ContributorModel) {
+], function(_,Backbone) {
   
   var ContributorModel = Backbone.Model.extend({});
 

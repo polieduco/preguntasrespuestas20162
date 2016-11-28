@@ -5,7 +5,7 @@
 	<div class="container">
 		<div class="profile">
 			<h2>Inicio de Sesi&#243n</h2>
-		
+			<font color=red id="mensajes"></font>
 			<button class="profile__avatar" id="toggleProfile">
 			
 				<img
@@ -31,15 +31,9 @@
 						<a href="index.html?#/vistaPrincipal" class="link"> ir a Vista Principal</a>
 					</div>
 					<div class="profile__footer">
-					<form method="get" action="index.html?#/vistaPrincipal">
-						<?php // Empieza el código php
-
-							if ($fieldUser=='Melissa') { 
-							}else {
-							echo("usuario invalido");
-							}
-						?>
-						<button class="btn">Ingresar</button>
+					<!-- action="index.html?#/vistaPrincipal" -->
+					<form method="get" onsubmit="return false;">
+						<button class="btn" id="btnlogin">Ingresar</button>
 						</form>
 					</div>
 				</div>

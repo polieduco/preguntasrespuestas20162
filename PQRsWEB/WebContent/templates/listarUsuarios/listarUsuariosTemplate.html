@@ -1,4 +1,5 @@
-<div class="main">
+<div class="main" charset="utf-8">
+
 
 <div class="mdl-cell mdl-cell--12-col">
         <div class="docs-text-styling component-title">
@@ -8,10 +9,16 @@
 
         
 
- <!-- Raised button Eliminar Preguntas -->
-<button class="mdl-button mdl-js-button mdl-button--raised">
- Inactivar Usuario
-</button>       
+ <!-- Raised button Crear Usuario y Editar Usuario -->
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btnCreaEditUsua">
+ Ir a Crear Usuario y Editar Usuario
+</button>
+
+<button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored" id="btnlistUsua">
+ Listar Usuarios
+</button>     
+
+   
 
           
           <!-- Add warning, if the component has one -->
@@ -37,19 +44,20 @@
       <th>
 
       </th>
-      <th class="mdl-data-table__cell--non-numeric">
-          idUsuario</th>
+      <th lass="mdl-data-table__cell--non-numeric">
+          idusuario</th>
        <th>Rol</th>
        <th>Nombre</th>
        <th>Apellidos</th>
        <th>Estado</th>
+       <th >Activar/Inactivar</th>
      </tr>
   </thead>
   <tbody id="listarUsuarios-list">  
   </tbody>
 </table>
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
-mdl-button--colored">
+mdl-button--colored" id="btnIzq">
 <<
 </button>
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
@@ -65,7 +73,7 @@ mdl-button--colored">
 3
 </button>
 <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect
-mdl-button--colored">
+mdl-button--colored" id="btnDer">
 >>
 </button>
 </div>
