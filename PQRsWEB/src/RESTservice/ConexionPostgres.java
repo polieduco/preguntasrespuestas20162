@@ -76,12 +76,13 @@ public class ConexionPostgres {
          Connection conexion = DriverManager.getConnection(cc);
          Statement comando = conexion.createStatement();
          String sql = 
-             "select nombre,identificacion,username from tbusuario";
+             "select nombre,identificacion,username,password from tbusuario";
          ResultSet resultado = comando.executeQuery(sql);
          while(resultado.next()) {
          	String i = resultado.getString("nombre");
             String n = resultado.getString("identificacion");
             String u = resultado.getString("username");
+            String p = resultado.getString("password");
 //             String a = resultado.getString('"'+"IdPregunta"+'"');
              lista.add(i+" - "+ n+" - "+ u) ;  
          }
