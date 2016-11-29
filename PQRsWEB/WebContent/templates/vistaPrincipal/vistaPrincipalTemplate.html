@@ -1,78 +1,113 @@
 <head>
-	<meta charset="utf-8">
+<meta charset="utf-8">
 </head>
+<link rel="stylesheet" href="css/MenuStyle.css">
 <div class="main">
-<div id="logo">
-    <h1>Gestión Preguntas y Respuestas</h1>
-</div>
-  
-      <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark mdl-js-ripple-effect--ignore-events" data-upgraded=",MaterialRipple">
-       <a href="#/listarUsuarios" class="mdl-layout__tab">
-          <li> <a href="#/listarUsuarios">listar Usuarios</a></li>
-       <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-       <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-       </span>
-       </span>
-       </a> 
-       <a href="#/crearUsuarioYeditarUsuario" class="mdl-layout__tab">
-             <li><a href="#/crearUsuarioYeditarUsuario" >CrearUsuarioYeditarUsuario</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/anadirComentario" class="mdl-layout__tab">
-             <li><a href="#/anadirComentario" >AñadirComentario</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/busquedaAvanzada" class="mdl-layout__tab">
-             <li><a href="#/busquedaAvanzada" >BusquedaAvanzada</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/busquedaBasica" class="mdl-layout__tab">
-             <li><a href="#/busquedaBasica" >BusquedaBasica</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/editarComentario" class="mdl-layout__tab">
-             <li><a href="#/editarComentario" >EditarComentario</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/editarPregunta" class="mdl-layout__tab">
-             <li><a href="#/editarPregunta" >EditarPregunta</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/filtrarPreguntas" class="mdl-layout__tab">
-             <li><a href="#/filtrarPreguntas" >FiltrarPreguntas</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       <a href="#/listar" class="mdl-layout__tab">
-             <li><a href="#/listar" >Listar Pregunta</a></li>
-              <span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple">
-                  <span class="mdl-ripple is-animating" style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
-                  </span>
-              </span>
-       </a>
-       
-        
-       </div>
-       
+	<div id="logo">
+		<h1>Gestión Preguntas y Respuestas</h1>
+	</div>
 
+	<div>
+		<script src="js/mdl/Menu.js"></script>
+		<button id="demo-menu-lower-left"
+			class="mdl-button mdl-js-button mdl-button--icon">
+			<i class="material-icons">more_vert</i>
+		</button>
+
+		<ul
+			class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+			for="demo-menu-lower-left">
+
+			<a href="#/listarUsuarios" class="mdl-layout">
+				<li><a href="#/listarUsuarios">listar Usuarios</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/crearUsuarioYeditarUsuario" class="mdl-layout">
+				<li><a href="#/crearUsuarioYeditarUsuario">CrearUsuarioYeditarUsuario</a></li>
+				<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/anadirComentario" class="mdl-layout">
+				<li><a href="#/anadirComentario">AñadirComentario</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/busquedaAvanzada" class="mdl-layout">
+				<li><a href="#/busquedaAvanzada">BusquedaAvanzada</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/busquedaBasica" class="mdl-layout">
+				<li><a href="#/busquedaBasica">BusquedaBasica</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/editarComentario" class="mdl-layout">
+				<li><a href="#/editarComentario">EditarComentario</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/editarPregunta" class="mdl-layout">
+				<li><a href="#/editarPregunta">EditarPregunta</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/filtrarPreguntas" class="mdl-layout">
+				<li><a href="#/filtrarPreguntas">FiltrarPreguntas</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+
+			<a href="#/listar" class="mdl-layout">
+				<li><a href="#/listar">Listar Pregunta</a></li> <span
+				class="mdl-layout__tab-ripple-container mdl-js-ripple-effect"
+				data-upgraded=",MaterialRipple"> <span
+					class="mdl-ripple is-animating"
+					style="width: 10px; height: 10px; transform: translate(-50%, -50%) translate(10px, 10px);">
+				</span>
+			</span>
+			</a>
+		</ul>
+	</div>
+	
 </div>
