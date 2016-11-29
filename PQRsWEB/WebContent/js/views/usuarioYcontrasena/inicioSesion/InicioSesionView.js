@@ -29,17 +29,6 @@ define([
 		login: function(){
 			var usuario = $("#fieldUser").val();
 			var password= $("#fieldPassword").val();
-			/*
-    	var um = new UsuarioModel();
-    	um.set({username:usuario});
-    	um.fetch();
-    	if(um.get("username") == usuario){
-    		//autenticado
-
-    	}else{
-    		//no esta autenticado
-
-    	}*/
 			if("" == usuario && "" == password){
 				$("#mensajes").html("Ingrese su usuario y contraseña");    		
 			}else{
@@ -59,14 +48,6 @@ define([
 						}
 					
 					});
-				
-				 //e.preventDefault();
-			//	if("poli" == usuario && "123" == password){
-				//	$("#mensajes").html("correcta"+resultFind);
-					//window.location="index.html?#/vistaPrincipal";     		
-				//}else{
-					//$("#mensajes").html("Usuario/clave incorrecta");
-				//}
 			}
 		}
 
