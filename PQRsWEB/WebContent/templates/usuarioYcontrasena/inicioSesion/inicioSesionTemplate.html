@@ -2,20 +2,20 @@
 
 <link rel="stylesheet" href="css/style.css">
 <div class="main">
-	<div class="container">
+	<div class="container" style="margin: 5% 0% 0% 40%;">
 		<div class="profile">
+		<font color=red id="mensajes"></font>
 			<h2>Inicio de Sesi&#243n</h2>
-			<font color=red id="mensajes"></font>
 			<button class="profile__avatar" id="toggleProfile">
-			
+
 				<img
 					src="https://thumbs.dreamstime.com/z/vector-el-icono-del-avatar-del-usuario-para-el-sitio-web-o-el-mvil-45836554.jpg"
-					alt="Avatar" align="middle" width=100%/>
+					alt="Avatar" align="middle" width=100% />
 			</button>
 			<div class="profile__form">
 				<div class="profile__fields">
+					<font color=red id="mensajes"></font>
 					<div class="field">
-					
 						<input type="text" id="fieldUser" class="input" required
 							pattern=.*\S.* /> <label for="fieldUser" class="label">Usuario</label>
 					</div>
@@ -23,17 +23,15 @@
 						<input type="password" id="fieldPassword" class="input" required
 							pattern=.*\S.* /> <label for="fieldPassword" class="label">Contrase&ntildea</label>
 					</div>
+
 					<div>
 						<a href="index.html?#/olvido" class="link"> Olvido su
 							contrase&ntildea?</a>
 					</div>
-					<div>
-						<a href="index.html?#/vistaPrincipal" class="link"> ir a Vista Principal</a>
-					</div>
+
 					<div class="profile__footer">
-					<!-- action="index.html?#/vistaPrincipal" -->
-					<form method="get" onsubmit="return false;">
-						<button class="btn" id="btnlogin">Ingresar</button>
+						<form method="get" onsubmit="return false;">
+							<button class="btn" id="btnlogin">Ingresar</button>
 						</form>
 					</div>
 				</div>
