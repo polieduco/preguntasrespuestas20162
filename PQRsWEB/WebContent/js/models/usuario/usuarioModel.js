@@ -1,4 +1,3 @@
-
 // Model for Tbusuario entity
 /**
  * 
@@ -11,15 +10,15 @@ define(
 
 			var usuarioModel = Backbone.Model
 					.extend({// se extienden todos los métodos y atributos de
-								// la clase Backbone.Model en el modelo actual.
+						// la clase Backbone.Model en el modelo actual.
 						// valores predeterminados del modelo actual
 						urlRoot : "http://localhost:9080/PQRsWEB/webresources/edu.poli.proyecto.test.tbusuario",// direccion
-																												// url
-																												// de
-																												// cada
-																												// modelo
-																												// y
-																												// coleccion
+						// url
+						// de
+						// cada
+						// modelo
+						// y
+						// coleccion
 						idAttribute : 'idusuario',
 						defaults : {
 							password : "",
@@ -29,23 +28,23 @@ define(
 							username : ""
 						},
 						toViewJson : function() {// contiene métodos para la
-													// creación y manipulación
-													// de objetos JSON como
-													// cadenas, objeto valor,
+							// creación y manipulación
+							// de objetos JSON como
+							// cadenas, objeto valor,
 							var result = this.toJSON(); // displayName property
-														// is used to render
-														// item in the list
+							// is used to render
+							// item in the list
 							result.displayName = this.get('idusuario');// Objeto
-																		// valor
-																		// es
-																		// una
-																		// cadena,
-																		// número,
-																		// booleano,
-																		// nulo,
-																		// objeto
-																		// o
-																		// arreglo
+							// valor
+							// es
+							// una
+							// cadena,
+							// número,
+							// booleano,
+							// nulo,
+							// objeto
+							// o
+							// arreglo
 							// devuelve un arreglo cuyos elementos
 							// correspondientes a las propiedades enumerables
 							// que seencuentran directamente en el object
@@ -57,14 +56,14 @@ define(
 							options || (options = {});
 							var errorHandler = {
 								error : function(jqXHR, textStatus, errorThrown) {// código
-																					// de
-																					// manejo
-																					// de
-																					// errores,configurados
-																					// en
-																					// el
-																					// servidor
-																					// REST.
+									// de
+									// manejo
+									// de
+									// errores,configurados
+									// en
+									// el
+									// servidor
+									// REST.
 									// TODO: put your error handling code here
 									// If you use the JS client from the
 									// different domain
@@ -77,10 +76,10 @@ define(
 									// some (f.e. the same) Web project on the
 									// same domain
 									alert('Unable to fulfil the request');// Muestra
-																			// notificación
-																			// como
-																			// una
-																			// alerta
+									// notificación
+									// como
+									// una
+									// alerta
 								}
 							}
 
