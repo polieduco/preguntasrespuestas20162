@@ -147,6 +147,33 @@ try {
 				}
 		return sResult;
 		}
-
+	public String findUserPassword(String user,String pass) {
+		String sResult="";
+		try {
+			Class.forName("org.postgresql.Driver");
+			Connection conexion = DriverManager.getConnection(cc);
+			Statement comando2 = conexion.createStatement();
+			String sql = "select count(*) from tbusuario where username = '"+user+"' and password='"+pass+"'";
+			ResultSet resultado = comando2.executeQuery(sql);
+			System.out.print(sql);
+			if(resultado.next()){        	 
+				String sql2 = "select username,password from tbusuario where username = '"+user+"' and password='"+pass+"'";
+				ResultSet resultado2 = comando2.executeQuery(sql2);
+				System.out.print(sql2);
+				if(resultado2.next()){
+					String retorno = resultado2.getString("username");
+					String retorno2 = resultado2.getString("Password");
+					sResult = retorno+"-"+retorno2;
+					}
+				}
+			else{
+				sResult="No existe usuario/contraseña";
+				}
+			} catch(Exception e) {
+				System.out.println("Error al realizar  esta accion  tipo de error:"+e.getMessage());
+				sResult="Error al realizar  esta accion  tipo de error:"+e.getMessage();
+				}
+		return sResult;
+		}
  
 }

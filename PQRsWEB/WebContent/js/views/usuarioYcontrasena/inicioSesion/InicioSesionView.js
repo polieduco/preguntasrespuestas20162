@@ -1,56 +1,57 @@
 define([
-  'jquery',
-  'underscore',
-  'backbone',
-  'text!templates/usuarioYcontrasena/inicioSesion/inicioSesionTemplate.html',
-  'models/usuario/usuarioModel'
-  ], function($, _, Backbone, inicioSesionTemplate, usuarioModel){
-  var InicioSesionView = Backbone.View.extend({
-    
-	  el: $("#mdl-layout__container"),
-    
-    render: function(){
-      $('.menu li').removeClass('active');
-      $('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
-      this.$el.html(inicioSesionTemplate);
-      /* Simple VanillaJS to toggle class */
+        'jquery',
+        'underscore',
+        'backbone',
+        'text!templates/usuarioYcontrasena/inicioSesion/inicioSesionTemplate.html',
+        'models/usuario/usuarioModel'
+        ], function($, _, Backbone, inicioSesionTemplate, usuarioModel){
+	var InicioSesionView = Backbone.View.extend({
 
-      document.getElementById('toggleProfile').addEventListener('click', function () {
-        [].map.call(document.querySelectorAll('.profile'), function(el) {
-          el.classList.toggle('profile--open');
-        });
-      });
-    },
-    
-    events: {
-    	"click #btnlogin": "login"
-    },
-    
-    login: function(){
-    	var usuario = $("#fieldUser").val();
-    	var password= $("#fieldPassword").val();
+		el: $("#mdl-layout__container"),
 
-    	/*
-    	var um = new UsuarioModel();
-    	um.set({username:usuario});
-    	um.fetch();
-    	if(um.get("username") == usuario){
-    		//autenticado
-    		
-    	}else{
-    		//no esta autenticado
-    		
-    	}*/
-    	if("poli" == usuario && "123" == password){
-    		$("#mensajes").html("correcta");
-    		window.location="index.html?#/listarUsuarios"; 
-    		
-    	}else{
-    		$("#mensajes").html("Usuario/clave incorrecta");
-    	}
-    }
-  
-  });
+		render: function(){
+			$('.menu li').removeClass('active');
+			$('.menu li a[href="'+window.location.hash+'"]').parent().addClass('active');
+			this.$el.html(inicioSesionTemplate);
+			/* Simple VanillaJS to toggle class */
 
-  return InicioSesionView;
+			document.getElementById('toggleProfile').addEventListener('click', function () {
+				[].map.call(document.querySelectorAll('.profile'), function(el) {
+					el.classList.toggle('profile--open');
+				});
+			});
+		},
+
+		events: {
+			"click #btnlogin": "login"
+		},
+
+		login: function(){
+			var usuario = $("#fieldUser").val();
+			var password= $("#fieldPassword").val();
+			if("" == usuario && "" == password){
+				$("#mensajes").html("Ingrese su usuario y contraseña");    		
+			}else{
+				let user=usuario;
+				let pass=password;
+				$.get('Rol', {
+			        username : user,
+			        password : pass
+					}, function(responseText) {
+						if(responseText=="Enhorabuena conectado!"){
+							window.location="index.html?#/vistaPrincipal"; 
+						}else{
+							$("#mensajes").html("Usuario/clave incorrecta");
+							$("#fieldUser").val("");
+							$("#fieldPassword").val("");
+							alert('Mensaje manejado con JavaScript');
+						}
+					
+					});
+			}
+		}
+
+	});
+
+	return InicioSesionView;
 });
