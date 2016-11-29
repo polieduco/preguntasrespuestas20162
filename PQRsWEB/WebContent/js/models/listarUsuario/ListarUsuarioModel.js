@@ -1,13 +1,10 @@
 /**
  * 
  */
-define([
-  'underscore',
-  'backbone'
-], function( _,Backbone) {
-  
-  var ListarUsuarioModel = Backbone.Model.extend({});
+define([ 'underscore', 'backbone' ], function(_, Backbone) {
 
-  return ListarUsuarioModel;
+	var ListarUsuarioModel = Backbone.Model.extend({});
+
+	return ListarUsuarioModel;
 
 });
