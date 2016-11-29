@@ -44,7 +44,6 @@ define([
 							$("#mensajes").html("Usuario/clave incorrecta");
 							$("#fieldUser").val("");
 							$("#fieldPassword").val("");
-							alert('Mensaje manejado con JavaScript');
 						}
 					
 					});
