@@ -1,61 +1,65 @@
 <main class="mdl-layout__content mdl-color--grey-100">
-        <div class="mdl-grid demo-content">
-          <div class=" mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid">
-            <div width="200px" height="200px" class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
-              <h6>Crear usuario</h6>
+<div class="mdl-grid demo-content">
+	<div
+		class=" mdl-color--white mdl-shadow--2dp mdl-cell mdl-cell--8-col mdl-grid">
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--4-col mdl-cell--3-col-desktop">
+			<h6>Crear usuario</h6>
+		</div>
+		<br />
+<!-- area de texto para ingresar nombre -->
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
+			<div class="mdl-textfield mdl-js-textfield">
+				<textarea class="mdl-textfield__input" type="text" rows="2" placeholder="Ingrese el nombre"
+					id="Inombre"></textarea>
             </div>
+		</div>
+<!-- area de texto para ingresar apellido -->
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
+			<div class="mdl-textfield mdl-js-textfield">
+				<textarea class="mdl-textfield__input" type="text" rows="2" placeholder="Ingrese el apellido"
+					id="Iapellido"></textarea>
+			</div>
+		</div>
+<!-- area de texto para ingresar direccion -->
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
+			<div class="mdl-textfield mdl-js-textfield">			
+				<textarea class="mdl-textfield__input" type="text" rows="2" placeholder="Ingrese su dirección"
+					id="Idireccion"></textarea>
+			</div>
+		</div>
+<!-- area de texto para ingresar telefono-->
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
+			<div class="mdl-textfield mdl-js-textfield">
+				<textarea class="mdl-textfield__input" type="text" rows="2" placeholder="Ingrese su teléfono"
+					id="Itelefono"></textarea>
+			</div>
+		</div>
+<!-- area de texto para ingresar correo -->
+		<div width="200px" height="200px"
+			class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
+			<div class="mdl-textfield mdl-js-textfield">
+				<textarea class="mdl-textfield__input" type="text" rows="2" placeholder="Ingrese su correo"
+					id="txt-correo"></textarea>
+			</div>
+		</div>
 
-            <div width="200px" height="200px"class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows="2" id="Inombre">Ingrese su nombre
-                </textarea>
-                <label class="mdl-textfield__label" for="Inombre">Nombre de usuario</label>
-              </div>
-            </div>
+		<!--Enviar formulario-->
 
-            <div width="200px" height="200px"class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows="2" id="Iapellido">Ingrese su apellido
-                </textarea>
-                <label class="mdl-textfield__label" for="Iapellido">Apellido de usuario</label>
-              </div>
-            </div>
+		<table width="50%" border="0" align="center" cellpadding="10"
+			cellspacing="0">
+			<tr>
+				<td><div align="center">
+						<input type="submit" value="Enviar formulario" id="btnEnviar">
+					</div></td>
+				<td></div align="center"> <input type="reset" value="Editar formulario"
+					id="btnEditar">
+					</div></td>
+			</tr>
 
-            <div width="200px" height="200px"class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows="2" id="Idireccion">Ingrese su dirección
-                </textarea>
-                <label class="mdl-textfield__label" for="Idireccion">Dirección de usuario</label>
-              </div>
-            </div>
-
-            <div width="200px" height="200px"class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows="2" id="Itelefono">Ingrese su teléfono
-                </textarea>
-                <label class="mdl-textfield__label" for="Itelefono">Teléfono de usuario</label>
-              </div>
-            </div>
-
-            <div width="200px" height="200px"class="demo-chart mdl-cell mdl-cell--12-col mdl-cell--9-col-desktop">
-              <div class="mdl-textfield mdl-js-textfield">
-                <textarea class="mdl-textfield__input" type="text" rows="2" id="txt-correo"> rzambrano@gmail.com
-                </textarea>
-                <label class="mdl-textfield__label" for="txt-correo">Correo electrónico de usuario</label>
-              </div>
-            </div>
-
-<!--Enviar formulario-->
-
-          <table width="50%" border="0" align="center" cellpadding="10" cellspacing="0">
-          <tr>
-          <td><div align= "center">
-          <input type="submit" value="Enviar formulario" id ="btnEnviar">
-          </div></td>
-          <td></div align="center">
-          <input type="reset"  value="Editar formulario" id= "btnEditar">
-          </div></td>
-          </tr>
-          
-        </div>
-      </main>
+			</div>
+</main>
