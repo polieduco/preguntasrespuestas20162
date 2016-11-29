@@ -132,7 +132,7 @@ try {
 			Class.forName("org.postgresql.Driver");
 			Connection conexion = DriverManager.getConnection(cc);
 			Statement comando = conexion.createStatement();
-			String sql = "select password from tbusuario where correo = '"+value+"'";
+			String sql = "select password from tbusuario where email = '"+value+"'";
 			System.out.print(sql);
 			ResultSet resultado = comando.executeQuery(sql);
 			if(resultado != null && resultado.next()){
