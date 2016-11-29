@@ -27,7 +27,7 @@ public class Usuario  extends HttpServlet {
 		}
 		String resultFind = conn.findPassword(userEmail);
 		
-		System.out.println("La contraseña del usuario es: "+conn.findPassword(userEmail));
+		System.out.println("el resultado es: "+conn.findPassword(userEmail));
 		
 		String greetings = resultFind;
 				 

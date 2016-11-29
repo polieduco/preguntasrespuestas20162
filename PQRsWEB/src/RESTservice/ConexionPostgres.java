@@ -132,19 +132,14 @@ try {
 			Class.forName("org.postgresql.Driver");
 			Connection conexion = DriverManager.getConnection(cc);
 			Statement comando = conexion.createStatement();
-			String sql = "select count(*) from tbusuario where correo = '"+value+"'";
+			String sql = "select password from tbusuario where email = '"+value+"'";
 			System.out.print(sql);
 			ResultSet resultado = comando.executeQuery(sql);
-			if(resultado.next()){        	 
-				String sql2 = "select password from tbusuario where correo = '"+value+"'";
-				ResultSet resultado2 = comando.executeQuery(sql2);
-				if(resultado2.next()){
-					String retorno = resultado2.getString("Password");
-					sResult = retorno;
-					}
-				}
-			else{
-				sResult="No existe mail/usuario";
+			if(resultado != null && resultado.next()){
+				String retorno = resultado.getString("Password");
+				sResult = retorno;
+				}else{
+					sResult="No existe mail/usuario";
 				}
 			} catch(Exception e) {
 				System.out.println("Error al realizar  esta accion  tipo de error:"+e.getMessage());
