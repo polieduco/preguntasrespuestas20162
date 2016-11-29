@@ -54,5 +54,12 @@ public class PreguntasRespuestas extends Application {
 		return sql.listarUsuarios();
 	}
 	
+	@GET
+	@Path("filtrarPreguntasString")
+	@Produces("application/json")
+	public String filtrarPreguntasString(@QueryParam("value") String value) {
+		return sql.filtrarPreguntasString(value);
+	}
+	
 	
 }
