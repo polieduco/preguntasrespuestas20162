@@ -241,11 +241,6 @@ p {
 	margin: 0 0 16px
 }
 
-a {
-	color: rgb(255, 64, 129);
-	font-weight: 500
-}
-
 blockquote {
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 	position: relative;
@@ -2867,7 +2862,7 @@ ul, ol {
 	width: 22px;
 	height: 22px;
 	border-radius: 50%;
-	background: rgb(255, 64, 129);
+	background: rgb(0, 0, 0);
 	color: rgb(255, 255, 255)
 }
 
@@ -2877,7 +2872,7 @@ ul, ol {
 }
 
 .mdl-badge.mdl-badge--no-background[data-badge]:after {
-	color: rgb(255, 64, 129);
+	color: rgb(0, 0, 0);
 	background: rgba(255, 255, 255, .2);
 	box-shadow: 0 0 1px gray
 }
@@ -3033,7 +3028,7 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-button--fab.mdl-button--colored {
-	background: rgb(255, 64, 129);
+	background: rgb(0, 0, 0);
 	color: rgb(255, 255, 255)
 }
 
@@ -3187,7 +3182,7 @@ input.mdl-button[type="submit"] {
 }
 
 .mdl-card__media {
-	background-color: rgb(255, 64, 129);
+	background-color: rgb(0, 0, 0);
 	background-repeat: repeat;
 	background-position: 50% 50%;
 	background-size: cover;
@@ -5321,7 +5316,7 @@ supports (pointer-events:auto ){ .
 	bottom: 0;
 	left: 0;
 	position: absolute;
-	background: rgb(255, 64, 129);
+	background: rgb(0, 0, 0);
 	-webkit-animation: border-expand .2s cubic-bezier(.4, 0, .4, 1) .01s
 		alternate forwards;
 	animation: border-expand .2s cubic-bezier(.4, 0, .4, 1) .01s alternate
@@ -5904,7 +5899,7 @@ _:-ms-input-placeholder, :root .mdl-slider.mdl-slider.is-upgraded {
 .mdl-snackbar__action {
 	background: 0 0;
 	border: none;
-	color: rgb(255, 64, 129);
+	color: rgb(0, 0, 0);
 	float: right;
 	padding: 14px 24px 14px 12px;
 	font-family: "Roboto", "Helvetica", "Arial", sans-serif;
